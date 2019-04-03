@@ -1,0 +1,30 @@
+\problemname{Workout}
+Anton is so strong!
+All the programmers are in awe of his great biceps, wishing they could be just like him.
+The secret, he says, is to do a workout every single day, doing only bench press.
+However, you can not just go to the gym and hope for the best.
+No, to get biceps the size of watermelons (just like Anton) you need to know what particular weight you should work out with during each day.
+
+Anton claims to use the following schedule.
+On his first day of training, Anton attempted to bench press $X$ micrograms.
+On each subsequent day, he used the following scheme.
+Assume that he on a particular day is due to lift $Y$ micrograms.
+If he succeeds, he will attempt to lift $Y + 25$ micrograms the next day.
+If he fails, he will instead reduce his attempted weight by $10\%$, rounded down to the nearest multiple of $25$ micrograms.
+
+You are a bit unsure if this is the scheme he is actually using.
+Maybe it is just a scam meant to waste the time of his lesser muscled ``friends''.
+As it happens, you know that Anton claims to have started bench pressing $K$ days ago, first attempting the weight $X$ micrograms.
+Today, he claims his schedule tells him to attempt lifting $Z$ micrograms.
+Your task is to determine if this really could be the case.
+
+\section*{Input}
+The first and only line of input contains of three integers, separated by spaces:
+\begin{itemize}
+\item the weight Anton claimed to started with, $X$ micrograms ($25 \le X \le 10^{18}$),
+\item the weight Anton claims he should lift today, $X$ micrograms ($25 \le Z \le 10^{18}$), and
+\item the number of days Anton have alreayd worked out, $K$ ($1 \le K \le 10\,000$).
+\end{itemize}
+
+\section*{Output}
+Output a single word: either \texttt{liar} if Anton could not possibly attempt the given weight according to his schedule, or \texttt{biceps} if his claims are consistent.
