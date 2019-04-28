@@ -26,11 +26,11 @@ int main() {
   cin.sync_with_stdio(0); cin.tie(0);
   cin.exceptions(cin.failbit);
 
-  ll N, M;
-  cin >> N >> M;
+  ll orig, today, days;
+  cin >> orig >> today >> days;
   set<pii> Q;
-  Q.insert(pii(N, N));
-  rep(i,0,M) {
+  Q.insert(pii(orig, orig));
+  rep(i,0,days) {
     set<pii> NQ;
     trav(it, Q) {
       NQ.insert(win(it));
@@ -47,6 +47,14 @@ int main() {
       }
     }
     Q.insert(cur);
-    cout << Q.size() << endl;
+  }
+  auto it = Q.lower_bound(pii(today + 1, 0));
+  if (it != Q.begin()) {
+    --it;
+  }
+  if (it->first <= today && today <= it->second) {
+    cout << "biceps" << endl;
+  } else {
+    cout << "liar" << endl;
   }
 }
