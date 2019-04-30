@@ -25,13 +25,13 @@ struct Point {
 };
 
 typedef Point<int> P;
-typedef tuple<ll, ll, ll> Line;
+typedef tuple<int, int, ll> Line;
 
 Line normalLine(P f, P s, P t) {
-  ll a = s.x - f.x;
-  ll b = s.y - f.y;
+  int a = s.x - f.x;
+  int b = s.y - f.y;
   ll c = ll(t.x) * (s.x - f.x) + ll(t.y) * (s.y - f.y);
-  ll g = __gcd(a, __gcd(b, c));
+  ll g = __gcd(c, (ll)__gcd(a, b));
   a /= g;
   b /= g;
   c /= g;
