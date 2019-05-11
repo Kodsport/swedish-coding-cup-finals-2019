@@ -26,6 +26,10 @@ struct Rat {
         }
     }
 
+    Rat operator+(const Rat& other) const {
+        return Rat(x*other.y+y*other.x, y*other.y);
+    }
+
     Rat operator-(const Rat& other) const {
         return Rat(x*other.y-y*other.x, y*other.y);
     }
@@ -36,6 +40,10 @@ struct Rat {
 
     bool operator<(const Rat& other) const {
         return x * other.y < y * other.x;
+    }
+
+    bool operator==(const Rat& other) const {
+        return x * other.y == y * other.x;
     }
 
     bool operator!=(const Rat& other) const {
@@ -51,30 +59,17 @@ struct Rat {
 
 struct Point {
     int x, y;
-
-    ll getDis2(const Point& other) const {
-        ll dx = x-other.x;
-        ll dy = y-other.y;
-        return dx*dx + dy*dy;
-    }
 };
 
 struct Line {
     Rat k, m;
 
-    Line(Rat _k, Rat _m) : k(_k), m(_m) {
-        k.reduce();
-        m.reduce();
-    }
+    Line(Rat _k, Rat _m) : k(_k), m(_m) {}
 
     bool operator<(const Line& other) const {
         if (k != other.k)
             return k < other.k;
         return m < other.m;
-    }
-
-    ll getHash() {
-        return 1000000000LL * k.x + 100000 * k.y + 1000 * m.x + m.y;
     }
 };
 
@@ -110,69 +105,33 @@ int main(){
         cin >> p.x >> p.y;
         points.push_back(p);
     }
-    unordered_map<ll, map<Line, int>> lineToInd;
-    int lineCount = 0;
-    vector<vector<int>> lineInd(N, vector<int>(N));
-    vector<int> symmetricPoints;
-    unordered_map<int, set<int>> pointsOnLine;
-    rep(i,0,N) {
-        Point p1 = points[i];
-        rep(j,0,N) {
-            if (i == j)
-                lineInd[i][j] = -1;
-            else if (i > j) {
-                lineInd[i][j] = lineInd[j][i];
-            }
-            else {
-                Point p2 = points[j];
-                Line l = getOrthogonalLine(p1, p2);
-                ll h = l.getHash();
-                if (!lineToInd[h].count(l)) {
-                    lineToInd[h][l] = lineCount++;
-                    symmetricPoints.emplace_back();
-                }
-                lineInd[i][j] = lineToInd[h][l];
-                symmetricPoints[lineInd[i][j]] += 2;
-            }
-        }
-    }
-    ll ops = 0;
-    rep(i,0,N) {
-        Point p1 = points[i];
-        map<ll, vector<int>> pointsAtDis;
-        rep(j,0,N) {
-            pointsAtDis[p1.getDis2(points[j])].push_back(j);
-        }
-        for (auto it : pointsAtDis) {
-            const vector<int>& v = it.second;
-            rep(j,0,sz(v))
-                rep(k,j+1,sz(v)) {
-                    ops++;
-                    pointsOnLine[lineInd[v[j]][v[k]]].insert(i);
-                }
-        }
-    }
-    int ans = 1;
-    rep(i,0,sz(symmetricPoints)) {
-        int res = symmetricPoints[i];
-        if (pointsOnLine.count(i)) {
-            res += sz(pointsOnLine[i]);
-        }
-        ans = max(ans, res);
-    }
-    unordered_map<ll, map<Line, unordered_set<int>>> lines;
+    map<Line, int> lines;
     rep(i,0,N) {
         Point p1 = points[i];
         rep(j,i+1,N) {
             Point p2 = points[j];
-            Line l = getLine(p1, p2);
-            ll h = l.getHash();
-            auto& it = lines[h][l];
-            it.insert(i);
-            it.insert(j);
-            ans = max(ans, sz(it));
+            Line l1 = getLine(p1, p2);
+            lines[l1] += 0;
+            Line l2 = getOrthogonalLine(p1, p2);
+            lines[l2] += 2;
         }
     }
+    ll ans = 1;
+    for (auto it : lines) {
+        Line line = it.first;
+        ll res = it.second;
+        rep(i,0,N) {
+            Point p = points[i];
+            if (line.k.y == 0) {
+                if (line.m.x == line.m.y * p.x)
+                    ++res;
+            }
+            else {
+                if (line.k * Rat(p.x, 1) + line.m == Rat(p.y, 1))
+                    ++res;
+            }
+        }
+        ans = max(ans, res);
+    }
     cout << ans << endl;
-    exit(0);
 }
