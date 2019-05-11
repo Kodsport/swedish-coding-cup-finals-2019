@@ -10,3 +10,5 @@ Olika typer av generatorer vi kan tänkas ha:
 - [x] Slumpmässiga punkter på en linje.
   - [x] På en linje.
   - [x] På flera linjer.
+- [ ] Slumpmässiga punkter i en liten (typ 70x70) kvadrat. (Värtstafall för Mårtens N^(5/2)-lösning)
+- [ ] Punktmängd där svaret är väldigt litet.
