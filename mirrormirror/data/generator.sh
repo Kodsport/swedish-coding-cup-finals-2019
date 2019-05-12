@@ -14,6 +14,8 @@ use_solution cubic.cpp opt
 compile gen_random.py
 compile gen_convex_hull.py
 compile gen_line.py
+compile gen_answer_is_2.cpp
+compile gen_answer_is_barely_3.cpp
 
 # Hjälpvariabler, helt frivilligt men gör det enkelt att ändra gränserna senare
 
@@ -50,6 +52,8 @@ tc smalln5 gen_random n=20  maxx=$MAXX
 tc smalln6 gen_line   n=10  maxx=$MAXX        lines=1
 tc smalln7 gen_line   n=20  maxx=$MAXX        lines=2
 tc smalln8 gen_line   n=20  maxx=$MAXX        lines=3
+tc smalln9 gen_random n=1   maxx=$MAXX
+tc smalln10 gen_answer_is_barely_3 20 40
 
 # konstruera testgrupp 2
 
@@ -64,6 +68,7 @@ tc mediumn5 gen_random n=800  maxx=$MAXX
 tc mediumn6 gen_line n=800  maxx=$MAXX   lines=1
 tc mediumn7 gen_line n=800  maxx=$MAXX   lines=3
 tc mediumn8 gen_line n=800  maxx=$MAXX   lines=10
+tc mediumn9 gen_answer_is_barely_3 800 $MAXX
 
 # konstruera testgrupp 4
 
@@ -78,12 +83,15 @@ tc bign_convex5 gen_convex_hull n=$MAXN  maxx=$MAXX
 
 group group6 13
 limits nMax=$MAXN xMax=$MAXX
-tc bign0 gen_random n=$MAXN  maxx=$MAXX
+tc bign0 gen_answer_is_barely_3 $MAXN $MAXX
 tc bign1 gen_random n=$MAXN  maxx=$MAXX
 tc bign2 gen_random n=$MAXN  maxx=$MAXX
 tc bign3 gen_random n=$MAXN  maxx=$MAXX
 tc bign4 gen_random n=$MAXN  maxx=$MAXX
 tc bign5 gen_random n=$MAXN  maxx=$MAXX
-tc bign6 gen_line n=$MAXN  maxx=$MAXX    lines=1
-tc bign7 gen_line n=$MAXN  maxx=$MAXX    lines=3
-tc bign8 gen_line n=$MAXN  maxx=$MAXX    lines=10
+tc bign6 gen_random n=$MAXN  maxx=$MAXX
+tc bign7 gen_line n=$MAXN  maxx=$MAXX    lines=1
+tc bign8 gen_line n=$MAXN  maxx=$MAXX    lines=3
+tc bign9 gen_line n=$MAXN  maxx=$MAXX    lines=10
+tc bign10 gen_random n=$MAXN  maxx=32 # The smallest square that fits 4000 points
+tc bign11 gen_answer_is_2 $MAXN $MAXX
