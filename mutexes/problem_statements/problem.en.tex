@@ -1,6 +1,6 @@
 \problemname{Mutexes}
 Anna loves coding multithreaded backend services.
-In such a service, multiple threads may sometime need to read and write the same data structures in memory.
+In such a service, multiple threads may sometimes need to read and write the same data structures in memory.
 To ensure all threads have a consistent view of a single datastructure, one can use so-called \emph{mutexes} to protect access to it.
 
 A mutex is an object that threads can \emph{acquire} and \emph{release}.
@@ -17,12 +17,11 @@ The commands are each one of:
   \item call another function
 \end{itemize}
 
-Anna is unsure regarding whether she implemented her mutexes correctly.
-She wants your help to verify that three properties hold.
-Assuming a function \texttt{main} is called in the beginning of the program, you should check whether;
+Anna is not sure if she implemented her mutexes correctly, and she wants your help to verify that three properties hold.
+Assuming a function \texttt{main} is called at the beginning of the program, you should check whether;
 \begin{enumerate}
   \item whenever a data structure protected by a mutex $X$ is to be accessed, the mutex $X$ is currently acquired,
-  \item whenever a mutex is to be acquired, the program has not already acquired it, causing a deadlock,
+  \item whenever a mutex is to be acquired, the program has not already acquired it (in order to avoid a deadlock),
   \item whenever a mutex is to be released, the program is currently holding it.
 \end{enumerate}
 
@@ -36,11 +35,11 @@ The commands will be of the form:
 \begin{itemize}
   \item \texttt{acquire X} -- the mutex named $X$ is acquired
   \item \texttt{release X} -- the mutex named $X$ is released
-  \item \texttt{access X} -- a data structure that must be protected by the mutex $X$ is accesses
+  \item \texttt{access X} -- a data structure that must be protected by the mutex $X$ is accessed
   \item \texttt{call F} -- the function called $F$ is called
 \end{itemize}
 
-All functions and mutexes have names between $1-10$ in length containing only characters \texttt{a-z}.
+All functions and mutexes have names between $1-10$ characters in length containing only characters \texttt{a-z}.
 No two functions will have the same name, and there will always be a function called \texttt{main}.
 
 It is guaranteed that there is no infinite recursion: a function will never call itself, either directly or through a chain of other functions.
@@ -55,7 +54,7 @@ Otherwise, for each property that does not hold, if
   \item a mutex may be released without being acquired, output \texttt{error}.
 \end{enumerate}
 
-If several properties does not hold, you should output the above messages on separate lines, in that order.
+If there are several properties that don't hold, you should output them on separate lines, in the order given above.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points.
