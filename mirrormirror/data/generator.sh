@@ -4,7 +4,7 @@ PPATH=$(realpath ..)
 
 # Inkludera hjälpskriptet. Kopiera hela testdata_tools-mappen och lägg in i repot och
 # referera till den härifrån.
-. ../testdata_tools/gen.sh
+. ../../testdata_tools/gen.sh
 
 # Välj vilken lösning som ska användas för att generera svar-filerna, ska finnas i
 # submissions/accepted/. Kör på en tom .py-fil tills vi har en faktisk lösning:
