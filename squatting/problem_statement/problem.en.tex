@@ -1,0 +1,37 @@
+\problemname{Typo Squatting}
+After Coding Cup grew to over $100\,000$ participants, our website \texttt{codingcup.se} faced a new problem.
+Spammers started to register domain names that were deceptively similar to ours, differing in just a single letter (such as \texttt{codingcap.se}).
+Unsuspecting participants sometimes visited these domains instead due to a typo.
+
+After losing a huge chunk of users due to these spam domains, you decided to fight back.
+Working together with the local Internet domain registrars, you got access to the list of \emph{all existing domains}.
+Using this data, you want to try to find domains that are under attack by these spammers.
+
+For each of the registered domains, your task is to find the number of other domains differing with only a single letter.
+
+\section*{Input}
+The first line of input contains an integer $1 \le N$, the number of domains.
+
+The next $N$ lines contain one domain name each, consisting only of characters \texttt{a-z}.
+No domain appears twice in the input.
+
+We assume all domains have the same ending (\texttt{.se}), so this is not included in the input domain names.
+
+\section*{Output}
+For each of the $N$ domain names, output the number of other domains that only differ with one character, in the same order as they appear in the input.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points.
+To get the points for a test group you need to solve all test cases in the test group.
+Your final score will be the maximum score of a single submission.
+
+Let $S$ be the sum of the lengths of all domain names in the input.
+
+\noindent
+\begin{tabular}{| l | l | l | l |}
+\hline
+Group & Points & Constraints \\ \hline
+$1$    & $TBD$         & $N = 2, S \le 1\,000\,000$ \\ \hline
+$2$    & $TBD$         & $S \le 1\,000$ \\ \hline
+$3$    & $TBD$         & $S \le 1\,000\,000$ \\ \hline
+\end{tabular}
