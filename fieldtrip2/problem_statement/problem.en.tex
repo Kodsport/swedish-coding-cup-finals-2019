@@ -1,9 +1,6 @@
 \problemname{Field Trip 2}
-There are $N$ students numbered from $1$ to $N$ going on a field trip.
-There are $M$ friendships that exist between students.
-
-Students can also be indirectly acquainted with one another.
-Two students $i$ and $j$ are acquaintances if they're friends, or if there exists a third student $k$ who is an acquaintance of both students $i$ and $j$.
+There are $M$ groups of students numbered from $1$ to $M$ going on a field trip.
+All students within a group are friends,  and no students from different groups are friends.
 
 You're getting ready to order buses for the trip, but there are two issues.
 Firstly, the transportation company insists that every bus you order must be filled exactly to its capacity of $K$ students.
@@ -17,18 +14,15 @@ Each student $i$ will refuse to get on the bus if either of the following condit
 
 You may choose to sever $0$ or more of the $M$ friendships amongst the students, which will of course also have an affect on which students are acquainted with one another.
 
-Determine the maximum number of students which can be brought on the trip,
-such that they're loaded onto buses with exactly $K$ students each, and every student is satisfied with their bus allocation.
+Determine the maximum number of students which can be brought on the trip, such that they're loaded onto buses with exactly $K$ students each, and every student is satisfied with their bus allocation.
 Furthermore, since you're feeling generous, determine the minimum number of friendships which you can sever in order to be able to bring that many students along.
 
 \section*{Input}
-The first line contains three space-separated integers $N$, $M$ and $K$ ($1 \le N$, $0 \le M$, $1 \le K \le N$).
+The first line contains three space-separated integers $M$ and $K$ ($1 \le M$, $1 \le K \le N$).
 
-The next $M$ lines contain information about the friendships.
-Each of these $M$ lines contain two space-separated integers $A_i$ and $B_i$ ($1 \le i \le M$), meaning that students $A_i$ and $B_i$ are friends ($1 \le A_i, B_i \le N$, $A_i \not= B_i$).
-No friendship will be listed twice.
+The next line contains $M$ integers $a_1, \dots, a_M$ ($1 \le a$), the number of students in each of the groups..
 
-\section*{Input}
+\section*{Output}
 Output two integers, the maximum number of students that can be brought along, and the minimum number of friendships you have to sever to bring that many along.
 
 \section*{Scoring}
@@ -40,7 +34,7 @@ Your final score will be the maximum score of a single submission.
 \begin{tabular}{| l | l | l | l |}
 \hline
 Group & Points & Constraints \\ \hline
-$1$    & $TBD$         & Each student is friend of at most two other students \\ \hline
-$2$    & $TBD$         & All students are friends \\ \hline
-$3$    & $TBD$         & $N, M \le 1\,000\,000$ \\ \hline
+$1$    & $TBD$         & Each group has size at most $2$ \\ \hline
+$2$    & $TBD$         & There are at most $1\,000$ students\\ \hline
+$3$    & $TBD$         & There are at most $1\,000\,000$ students \\ \hline
 \end{tabular}
