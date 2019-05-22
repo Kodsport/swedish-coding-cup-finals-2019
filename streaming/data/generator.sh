@@ -17,4 +17,4 @@ sample 1
 
 group group1 5
 limits sMax=$MAXS
-tc bign0 gen_random NUM1=50 NUM2=50 NUMB=10
+tc bign0 gen_random 1=50 2=50 b=10 k=30

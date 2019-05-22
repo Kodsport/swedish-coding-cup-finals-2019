@@ -1,17 +1,18 @@
 from util import *
 import random
 
-NUM1    = int(cmdlinearg('NUM1'))
-NUM2    = int(cmdlinearg('NUM2'))
-NUMB    = int(cmdlinearg('NUMB'))
+num1 = int(cmdlinearg('1'))
+num2 = int(cmdlinearg('2'))
+numb = int(cmdlinearg('b'))
+k = int(cmdlinearg('k'))
 
 days = []
-for i in range(NUM1):
+for i in range(num1):
     days.append('1')
-for i in range(NUM2):
+for i in range(num2):
     days.append('2')
-for i in range(NUMB):
+for i in range(numb):
     days.append('B')
 random.shuffle(days)
-print(len(days))
-print(''.join(map(str, days)))
+print(len(days), k)
+print(''.join(days))

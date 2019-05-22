@@ -14,7 +14,7 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<pii> vpi;
     
-int N;
+int N, K;
 string S;
 
 struct Key {
@@ -55,14 +55,14 @@ int rec(int day, int d1, int d2, int e1, int e2) {
     if (d2 && e2) {
         ret = min(ret, rec(day+1, d1-1, d2-1, e1, e2-1));
     }
-    ret = min(ret, 1+rec(day+1, 29, d2-1, e1-1, e2));
-    ret = min(ret, 1+rec(day+1, d1-1, 29, e1, e2-1));
+    ret = min(ret, 1+rec(day+1, K-1, d2-1, e1-1, e2));
+    ret = min(ret, 1+rec(day+1, d1-1, K-1, e1, e2-1));
     cache[key] = ret;
     return ret;
 }
 
 int main(){
 	ios::sync_with_stdio(0);
-    cin >> N >> S;
+    cin >> N >> K >> S;
     cout << rec(0, 0, 0, 0, 0) << endl;
 }

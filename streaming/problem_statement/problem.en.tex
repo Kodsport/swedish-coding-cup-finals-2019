@@ -12,13 +12,13 @@ Every day, you want to watch one episode you have never seen before.
 
 To avoid the problem of a single streaming service running out of episodes, you plan to use two streaming services instead.
 At any given day, you can buy a subscription of a service that you do not currently subscribe to.
-A subscription runs for the following $30$ days, and during each of these days, you can watch episodes on this streaming service.
+A subscription runs for the following $K$ days, and during each of these days, you can watch episodes on this streaming service.
 You may purchase a subscription for the \emph{other} service even if you already have a subscription for the first one.
 
 Given the dates when each service release a new episode for the following $N$ days, determine the total number of subscription periods you need to buy to always have a previously unseen episode to watch on each of the next $N$ days.
 
 \section*{Input}
-The first line contains $N$, the number of days you have the release schedule for.
+The first line contains $N$, the number of days you have the release schedule for, and $K$, the number of days each subscription runs for ($1 \le K \le N$).
 The next line contains a string of $N$ characters, consisting only of characters \texttt{1}, \texttt{2} or \texttt{B}.
 
 The $i$'th character describes whether a new episode is released on the first service (\texttt{1}), second service (\texttt{2}), or both services (\texttt{B}) on day $i$.
@@ -31,6 +31,7 @@ Your solution will be tested on a set of test groups, each worth a number of poi
 To get the points for a test group you need to solve all test cases in the test group.
 Your final score will be the maximum score of a single submission.
 
+% TODO: use K for separating groups
 \noindent
 \begin{tabular}{| l | l | l | l |}
 \hline
