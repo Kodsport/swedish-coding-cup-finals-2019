@@ -19,10 +19,9 @@ ll X, Z, K;
 ll applyReductions(ll X, ll reductions) {
     if (reductions == 0)
         return X;
-    ll reduction = X/10;
-    if (reduction == 0)
-        return X;
-    return applyReductions(X-reduction, reductions-1);
+    if (!X)
+        return 0;
+    return applyReductions((X*9)/10, reductions-1);
 }
 
 ll applyAdds(ll X, ll adds) {
