@@ -1,35 +1,35 @@
-\problemname{Spegel, spegel...}
+\problemname{Mirror, Mirror...}
 
-% TODO: translate this to English
+Mirror, mirror, on the wall, which mirror symmetric subset of these points is the largest of them all?
 
-\noindent
-Spegel, spegel, på väggen där, säg mig vilken den största spegelsymmetriska delmängden av dessa punkter är.
+The set $P$ consists of $N$ points. We say that a subset $S \subseteq P$ is
+\emph{mirror symmetric} if there exists a line $\ell$ such that for each point
+$p \in S$, the reflection of $p$ across $\ell$ is also in $S$.
 
-\noindent
-Mängden $P = \{p_1, p_2, \dots, p_N\}$ består av $N$ punkter, $p_i = (x_i, y_i)$. Beteckna speglingen av punkten $p$ i linjen $l$ som $Sp(p, l)$. Vi säger att en mängd $S \subset P$ är spegelsymmetrisk genom linjen $l$ om $p \in S$ implicerar att $Sp(p, l) \in S$. Vi säger att en mängd $S \subset P$ är spegelsymmetrisk om det finns en linje $l$ sådan att $S$ är spegelsymmetrisk genom $l$.
+Given the set $P$, what is the largest size of any mirror symmetric subset?
 
-\section*{Indata}
-På första raden i indatan står heltalet $N$, antalet punkter i $P$. Därefter följer $N$ rader bestående av två heltal $-30000 \leq x_i, y_i \leq 30000$, koordinaterna för punkten $p_i$. Ingen punkt förekommer två gånger i indata.
+\section*{Input}
+The first line of the input contains $N$, the number of points.
+The next $N$ lines each consist of two integers $x_i, y_i$ ($-30\,000 \le x_i, y_i \le 30\,000$), the coordinates of each point.
 
-\section*{Utdata}
-Utdatan ska bestå av en rad med antalet punkter i den största spegelsymmetriska delmängden av $P$.
+There will be no duplicate points in the input.
 
-\section*{Poängsättning}
-Din lösning kommer att testas på en mängd testfallsgrupper.
-För att få poäng för en grupp så måste du klara alla testfall i gruppen.
-Nedan ser du en beskrivning av testfallsgrupperna.
+\section*{Output}
+Output a single integer -- the largest size of a mirror symmetric subset.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points.
+To get the points for a test group you need to solve all test cases in the test group.
+Your final score will be the maximum score of a single submission.
 
 \noindent
 \begin{tabular}{| l | l | l | l |}
 \hline
-Grupp & Poängvärde & Gränser \\ \hline
+Group & Points & Constraints \\ \hline
 $1$    & $TBD$         & $1 \leq N \leq 20$ & \\ \hline
-$2$    & $TBD$         & $1 \leq N \leq 800$ & Högst två punkter ligger på samma linje.\\ \hline
+$2$    & $TBD$         & $1 \leq N \leq 800$ & No three points will be on the same line.\\ \hline
 $3$    & $TBD$         & $1 \leq N \leq 800$ & \\ \hline
-$4$    & $TBD$         & $1 \leq N \leq 4000$ & Om det faktiska svaret är $r$, är ett svar $s$ godkänt om $|r-s| \leq 1$.\\ \hline
-$5$    & $TBD$         & $1 \leq N \leq 4000$ & $P$ innehåller samma punkter som det konvexa höljet av $P$.\\ \hline
+$4$    & $TBD$         & $1 \leq N \leq 4000$ & If the real answer is $r$, an answer $s$ will be accepted if $|r-s| \leq 1$.\\ \hline
+$5$    & $TBD$         & $1 \leq N \leq 4000$ & $P$ is equal to its convex hull. No three points will be on the same line.\\ \hline
 $6$    & $TBD$         & $1 \leq N \leq 4000$ & \\ \hline
 \end{tabular}
-
-\section*{Förklaring av exempelfall}
-TODO
