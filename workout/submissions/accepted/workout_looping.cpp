@@ -42,7 +42,7 @@ int main() {
     }
   }
 
-  for (int i = 0; i <= min(days, 400); i++) {
+  for (int i = 0; i <= min(days, 400LL); i++) {
     ll lo = orig + (days - i) * 25;
     ll hi = orig;
     for (int j = 0; j < i; j++) {
