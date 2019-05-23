@@ -13,9 +13,10 @@ More specifically, how do you optimally pack different kinds of candy into boxes
 The careful market research came up with two rules:
 \begin{itemize}
   \item First of all, it turned out to be very bad to sell boxes with only one kind of candy.
-    If it is sold to someone who turned out to dislike the candy, they will be outraged!
+    If it is sold to someone who turns out to dislike the candy, they will be outraged!
   \item Secondly, it is also bad to put \emph{all} the candy that you have of a certain kind into a single box.
-    After all, if someone bought it and liked that kind, they won't have an incentive to buy new boxes containing it.
+    After all, if someone buys it and likes that kind, they won't have an incentive to buy new boxes containing it.
+    This restriction does not apply to kinds of which you only have one candy.
 \end{itemize}
 
 You currently have $M$ kinds of candy, numbered from $1$ to $M$.
@@ -25,7 +26,7 @@ In addition to the above marketing rules, a box must also be packed with exactly
 These rules can make it impossible to pack all candies -- for example, if you only have candies of a single kind, you would never be able to pack a box!
 Likewise, if you have boxes of size $2$ and an odd number of candies, at least one candy got to go.
 
-To help the situation, you can take a candy and make an entire new kind of it by adding random ingredients (this entirely new kind is not subject to the constraint you may not put all the candy of a given kind into a single box).
+To help the situation, you can take a piece of candy and make an entire new kind of it by adding random ingredients.
 You may do this any number of times, but since it's a very expensive process you would prefer to do it as few times as possible.
 You also want to pack as many boxes of candy as possible.
 
