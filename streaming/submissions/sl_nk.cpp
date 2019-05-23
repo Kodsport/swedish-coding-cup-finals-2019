@@ -12,7 +12,6 @@ typedef vector<int> vi;
 int N, K;
 string str;
 vector<vi> memo[2];
-ll work;
 int solve(int at, int b, int side) {
 	int& out = memo[side][b][at];
 	if (out != -1) return out;
