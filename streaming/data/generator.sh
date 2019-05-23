@@ -21,11 +21,14 @@ for A in {1..5}; do
 	tc 1${A}2-tiny gen_random 1=5 2=5 b=7 k=3
 	tc 1${A}3-tiny gen_random 1=5 2=5 b=5 k=4
 done
-tc 1-k1 gen_random 1=1000 2=1000 b=1000 k=1
-tc 1-k2 gen_random 1=1000 2=1000 b=1000 k=2
-tc 1-rand1 gen_random 1=1000 2=1000 b=1000 k=3
-tc 1-rand2 gen_random 1=1000 2=1000 b=1000 k=4
-tc 1-rand3 gen_random 1=1000 2=1000 b=1000 k=10
+tc 1-k1 gen_random 1=300 2=300 b=300 k=1
+tc 1-k2 gen_random 1=300 2=300 b=300 k=2
+tc 1-rand1 gen_random 1=300 2=300 b=300 k=3
+tc 1-rand2 gen_random 1=300 2=300 b=300 k=4
+tc 1-rand3 gen_random 1=300 2=300 b=300 k=10
+tc 1-ball gen_random 1=0 2=0 b=1000 k=10
+tc 1-1all gen_random 1=1000 2=0 b=0 k=10
+tc 1-2all gen_random 1=0 2=999 b=0 k=10
 
 group group2 10
 limits n=$N k=10
