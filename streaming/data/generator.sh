@@ -7,6 +7,7 @@ PPATH=$(realpath ..)
 use_solution sl.cpp opt
 
 compile gen_random.py
+compile gen_n2.py
 
 N=200000
 
@@ -40,6 +41,8 @@ tc 2-rand4 gen_random 1=60000 2=40000 b=100000 k=9
 tc 2-rand5 gen_random 1=90000 2=100000 b=3000 k=10
 tc 2-rand6 gen_random 1=90000 2=100000 b=3000 k=6
 tc 2-rand7 gen_random 1=90000 2=100000 b=3000 k=3
+tc 2-n2-1 gen_n2 k=3 n=200000 seed=128
+tc 2-n2-2 gen_n2 k=10 n=200000 seed=127
 
 group group3 10
 limits n=$N k=200
@@ -50,6 +53,7 @@ tc 3-rand3 gen_random 1=90000 2=110000 b=0 k=200
 tc 3-rand4 gen_random 1=60000 2=40000 b=100000 k=199
 tc 3-rand5 gen_random 1=90000 2=100000 b=3000 k=100
 tc 3-rand6 gen_random 1=90000 2=100000 b=3000 k=60
+tc 3-n2 gen_n2 k=100 n=200000 seed=128
 
 group group4 10
 limits n=$N k=$N
@@ -58,3 +62,4 @@ tc 4-rand1 gen_random 1=80000 2=110000 b=5000 k=180000
 tc 4-rand2 gen_random 1=80000 2=110000 b=5000 k=50000
 tc 4-rand3 gen_random 1=80000 2=110000 b=5000 k=10000
 tc 4-rand4 gen_random 1=80000 2=110000 b=5000 k=3000
+tc 4-n2 gen_n2 k=30000 n=200000 seed=128
