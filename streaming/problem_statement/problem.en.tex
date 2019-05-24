@@ -1,30 +1,21 @@
 \problemname{Streaming Services}
 
-% TODO: new statement!
+Last year, you finally went ahead and became a \emph{cord-cutter}, cancelling your TV subscription to avoid all the annoying ads.
+This was a relief.
+Suddenly, you could watch TV whenever \emph{you} wanted, rather than when the TV channels dictated it.
+Of course, this new-found happiness was short-lived.
+The streaming services quickly started adapting the old ``one episode a week'' paradigm that the old TV channels are based on, and suddenly the conversations during lunch at work started revolving around the episodes released on the previous day on the streaming services.
 
-% You want to watch TV every day, N days in a row.
-% Every day, either service 1 or service 2 or both have something worth seeing.
-% Subscriptions run for K days. How many subscriptions do you have to buy?
+A streaming service works like this.
+At some specific days, a service will release exactly one new episode of a TV show.
+Every day, you need to watch an episode that was released during this day, so you can join in on the lunch conversations the day after.
 
-% Old statement:
-
-% Last year, you finally went ahead and became a \emph{cord-cutter}, cancelling your TV subscription to avoid all the annoying ads.
-% This turned out to not be without problems.
-% When everyone watched shows live on TV, you could just turn on your TV and always have something to watch.
-% Nowadays, you would just subscribe to a streaming service and watch TV whenever you want instead.
-% If you watch TV every day, this may become problematic, since you can accidentally run out of new shows to watch!
-% 
-% A streaming service works like this.
-% At some specific days, a service will release exactly one new episode of a TV show.
-% You can watch episodes whenever you want, including on the day of release.
-% Every day, you want to watch one episode you have never seen before.
-% 
-% To avoid the problem of a single streaming service running out of episodes, you plan to use two streaming services instead.
-% At any given day, you can buy a subscription of a service that you do not currently subscribe to.
-% A subscription runs for the following $K$ days, and during each of these days, you can watch episodes on this streaming service.
-% You may purchase a subscription for the \emph{other} service even if you already have a subscription for the first one.
-% 
-% Given the dates when each service release a new episode for the following $N$ days, determine the total number of subscription periods you need to buy to always have a previously unseen episode to watch on each of the next $N$ days.
+Since your favourite streaming service may sometimes not release an episode, you plan to use two streaming services instead.
+At any given day, you can buy a subscription of a service that you do not currently subscribe to.
+A subscription runs for the following $K$ days, and during each of these days, you can watch episodes on the streaming service you just bought a subscription for.
+You may purchase a subscription for the \emph{other} service even if you already have a subscription for the first one.
+ 
+Given the dates when each service release a new episode for the following $N$ days, determine the total number of subscription periods you need to buy to each day have an active subscription for a service that released a new episode.
 
 \section*{Input}
 The first line contains $N$, the number of days you have the release schedule for, and $K$, the number of days each subscription runs for ($1 \le K \le N$).
@@ -33,7 +24,7 @@ The next line contains a string of $N$ characters, consisting only of characters
 The $i$'th character describes whether a new episode is released on the first service (\texttt{1}), second service (\texttt{2}), or both services (\texttt{B}) on day $i$.
 
 \section*{Output}
-Output a single integer; the number of streaming service periods you need to purchase to watch a previously unwatched episode each day.
+Output a single integer; the number of streaming service periods you need to purchase to watch a newly released episode each day.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points.
