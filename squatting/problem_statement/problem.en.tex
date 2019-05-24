@@ -12,7 +12,7 @@ For each of the registered domains, your task is to find the number of other dom
 \section*{Input}
 The first line of input contains an integer $N \ge 1$, the number of domains.
 
-The next $N$ lines contain one domain name each, consisting only of characters \texttt{a-z}.
+The next $N$ lines contain one (non-empty) domain name each, consisting only of characters \texttt{a-z} and \texttt{0-9}.
 No domain appears twice in the input.
 
 We assume all domains have the same ending (\texttt{.se}), so this is not included in the input domain names.
@@ -32,7 +32,8 @@ Let $S$ be the sum of the lengths of all domain names in the input.
 \begin{tabular}{| l | l | l | l |}
 \hline
 Group & Points & Constraints \\ \hline
-$1$    & $TBD$         & $N = 2, S \le 1\,000\,000$ \\ \hline
-$2$    & $TBD$         & $S \le 1\,000$ \\ \hline
-$3$    & $TBD$         & $S \le 1\,000\,000$ \\ \hline
+$1$    & $TBD$         & $S \le 500$ \\ \hline
+$2$    & $TBD$         & $S \le 100\,000$, all domains have length at most 10 \\ \hline
+$3$    & $TBD$         & $S \le 300\,000$ \\ \hline
+$4$    & $TBD$         & $S \le 3\,000\,000$ \\ \hline
 \end{tabular}
