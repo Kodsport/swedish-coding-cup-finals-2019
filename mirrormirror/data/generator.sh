@@ -90,7 +90,7 @@ wait
 for A in secret/group6/*.in; do
 	# We don't have output validator flags per test group in Kattis, so hack it by adding some whitespace
 	B=$(basename $A .in)
-	echo ' ' > secret/group4/offbyone-$B.in
-	cat secret/group6/$B.in >> secret/group4/offbyone-$B.in
-	cp secret/group6/$B.ans secret/group4/offbyone-$B.ans
+	cp secret/group6/$B.in secret/group4/offbyone-$B.in
+	echo ' ' > secret/group4/offbyone-$B.ans
+	cat secret/group6/$B.ans >> secret/group4/offbyone-$B.ans
 done
