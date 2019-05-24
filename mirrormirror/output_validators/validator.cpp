@@ -19,7 +19,13 @@ int main(int argc, char **argv) {
     cin >> provided;
 
     if (!cin) {
-        cout << "io error" << endl;
+        cout << "WA: failed to read an int" << endl;
+        return 43;
+    }
+
+    string extra;
+    if (cin >> extra) {
+        cout << "WA: more than one token" << endl;
         return 43;
     }
 
