@@ -4,7 +4,7 @@ PPATH=$(realpath ..)
 
 . ../../testdata_tools/gen.sh
 
-use_solution cubic.cpp opt
+use_solution mirrormirror_js.cpp opt
 
 compile gen_random.py
 compile gen_convex_hull.py
@@ -13,13 +13,13 @@ compile gen_answer_is_2.cpp opt
 compile gen_answer_is_barely_3.cpp opt
 
 # Antal punkter
-MAXN=4000
+MAXN=1500
 
 # Högsta absolutbeloppet av en koordinat (|xi| <= MAXX && |yi| <= MAXX)
 MAXX=30000
 
 samplegroup
-limits nMax=$MAXN xMax=$MAXX
+limits nMax=100 xMax=$MAXX
 sample 1
 
 group group1 5
@@ -39,6 +39,7 @@ tc smalln10 gen_answer_is_barely_3 20 40
 group group2 13
 limits nMax=800 xMax=$MAXX nocolinear=1
 # TODO
+tc nocolinear1 gen_random n=800  maxx=$MAXX
 
 group group3 13
 limits nMax=800 xMax=$MAXX
