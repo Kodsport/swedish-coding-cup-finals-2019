@@ -9,8 +9,8 @@ use_solution cubic.cpp opt
 compile gen_random.py
 compile gen_convex_hull.py
 compile gen_line.py
-compile gen_answer_is_2.cpp
-compile gen_answer_is_barely_3.cpp
+compile gen_answer_is_2.cpp opt
+compile gen_answer_is_barely_3.cpp opt
 
 # Antal punkter
 MAXN=4000
@@ -36,10 +36,14 @@ tc smalln8 gen_line   n=20  maxx=$MAXX        lines=3
 tc smalln9 gen_random n=1   maxx=$MAXX
 tc smalln10 gen_answer_is_barely_3 20 40
 
-# TODO: testgrupp 2
+group group2 13
+limits nMax=800 xMax=$MAXX nocolinear=1
+# TODO
 
 group group3 13
 limits nMax=800 xMax=$MAXX
+include_group group2
+include_group group1
 tc mediumn0 gen_random n=800  maxx=$MAXX
 tc mediumn1 gen_random n=800  maxx=$MAXX
 tc mediumn2 gen_random n=800  maxx=$MAXX
@@ -56,7 +60,7 @@ limits nMax=$MAXN xMax=$MAXX
 # Copied from group 6 below
 
 group group5 13
-limits nMax=$MAXN xMax=$MAXX
+limits nMax=$MAXN xMax=$MAXX convexhull=1
 tc bign_convex0 gen_convex_hull n=$MAXN  maxx=$MAXX
 tc bign_convex1 gen_convex_hull n=$MAXN  maxx=$MAXX
 tc bign_convex2 gen_convex_hull n=$MAXN  maxx=$MAXX
@@ -66,6 +70,8 @@ tc bign_convex5 gen_convex_hull n=$MAXN  maxx=$MAXX
 
 group group6 13
 limits nMax=$MAXN xMax=$MAXX
+include_group group5
+include_group group3
 tc bign0 gen_answer_is_barely_3 $MAXN $MAXX
 tc bign1 gen_random n=$MAXN  maxx=$MAXX
 tc bign2 gen_random n=$MAXN  maxx=$MAXX
