@@ -41,12 +41,12 @@ limits l=1000 k=1
 tc 2-rand1 gen_random n=2 l=1000 k=1
 tc 2-rand2 gen_random n=100 l=1000 k=1
 tc 2-rand3 gen_random n=3 l=10 k=1
-tc 2-smart1 gen n=100 l=1000 k=1 eachlo=4 eachhi=7 tryk=500000 tree=shallow calls=10 error=0
-tc 2-smart2 gen n=100 l=1000 k=1 eachlo=2 eachhi=7 tryk=500000 tree=shallow calls=10 error=1
-tc 2-smart3 gen n=100 l=1000 k=1 eachlo=2 eachhi=7 tryk=500000 tree=random calls=50 error=0
-tc 2-smart4 gen n=100 l=1000 k=1 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=1
-tc 2-smart5 gen n=300 l=1000 k=1 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=1
-tc 2-smart6 gen n=300 l=1000 k=1 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=0
+tc 2-smart1 gen n=100 l=1000 k=1 eachlo=7 eachhi=10 tryk=500000 tree=shallow calls=10 error=0
+tc 2-smart2 gen n=100 l=1000 k=1 eachlo=7 eachhi=10 tryk=500000 tree=shallow calls=10 error=1
+tc 2-smart3 gen n=100 l=1000 k=1 eachlo=7 eachhi=10 tryk=500000 tree=random calls=50 error=0
+tc 2-smart4 gen n=100 l=1000 k=1 eachlo=5 eachhi=8 tryk=500000 tree=random calls=50 error=1
+tc 2-smart5 gen n=300 l=1000 k=1 eachlo=4 eachhi=6 tryk=500000 tree=random calls=50 error=1
+tc 2-smart6 gen n=300 l=1000 k=1 eachlo=4 eachhi=6 tryk=500000 tree=random calls=50 error=0
 
 # DP per mutex
 # $L \le 1000$. It doesn't matter which error you output.
@@ -59,9 +59,9 @@ tc 3-rand3 gen_random n=3 l=10 k=50
 tc 3-smart1 gen n=100 l=1000 eachlo=4 eachhi=7 tryk=500000 tree=shallow calls=10 error=0
 tc 3-smart2 gen n=100 l=1000 eachlo=2 eachhi=7 tryk=500000 tree=shallow calls=10 error=1
 tc 3-smart3 gen n=100 l=1000 eachlo=2 eachhi=7 tryk=500000 tree=random calls=50 error=0
-tc 3-smart4 gen n=100 l=1000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=1
-tc 3-smart5 gen n=300 l=1000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=1
-tc 3-smart6 gen n=300 l=1000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 error=0
+tc 3-smart4 gen n=100 l=1000 eachlo=1 eachhi=3 tryk=500000 tree=random calls=50 error=1
+tc 3-smart5 gen n=300 l=1000 eachlo=1 eachhi=3 tryk=500000 tree=random calls=50 error=1
+tc 3-smart6 gen n=300 l=1000 eachlo=1 eachhi=3 tryk=500000 tree=random calls=50 error=0
 
 # + reconstruction
 # $L \le 1000$ \\ \hline
@@ -92,12 +92,12 @@ group group5 10
 limits l=50000 onlyacq=1
 tc 5-rand1 gen_random n=1 l=50000 k=100000 onlyacq=1
 tc 5-rand2 gen_random n=100 l=50000 k=100000 onlyacq=1
-tc 5-smart1 gen n=10000 l=50000 eachlo=4 eachhi=7 tryk=500000 tree=shallow calls=1000 error=0 onlyacq=1
-tc 5-smart2 gen n=10000 l=50000 eachlo=2 eachhi=7 tryk=500000 tree=shallow calls=1000 error=1 onlyacq=1
-tc 5-smart3 gen n=10000 l=50000 eachlo=2 eachhi=7 tryk=500000 tree=random calls=1000 error=0 onlyacq=1
-tc 5-smart4 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=1000 error=1 onlyacq=1
-tc 5-smart5 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=10000 error=1 onlyacq=1
-tc 5-smart6 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=10000 error=0 onlyacq=1
+tc 5-smart1 gen n=10000 l=50000 eachlo=2 eachhi=5 tryk=500000 tree=shallow remEdges=200 calls=200 error=0 onlyacq=1 seed=123
+tc 5-smart2 gen n=10000 l=50000 eachlo=2 eachhi=5 tryk=500000 tree=shallow remEdges=200 calls=200 error=1 onlyacq=1 seed=123
+tc 5-smart3 gen n=10000 l=50000 eachlo=1 eachhi=5 tryk=500000 tree=random calls=30 remEdges=15 error=0 onlyacq=1
+tc 5-smart4 gen n=15000 l=50000 eachlo=1 eachhi=5 tryk=500000 tree=random calls=30 remEdges=15 error=1 onlyacq=1
+tc 5-smart5 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=1000 error=1 onlyacq=1
+tc 5-smart6 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=1000 error=0 onlyacq=1
 
 # Bitsets
 # $L \le 50\,000$
@@ -111,5 +111,5 @@ tc 6-smart1 gen n=10000 l=50000 eachlo=4 eachhi=7 tryk=500000 tree=shallow calls
 tc 6-smart2 gen n=10000 l=50000 eachlo=2 eachhi=7 tryk=500000 tree=shallow calls=1000 error=1
 tc 6-smart3 gen n=10000 l=50000 eachlo=2 eachhi=7 tryk=500000 tree=random calls=1000 error=0
 tc 6-smart4 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=1000 error=1
-tc 6-smart5 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=10000 error=1
-tc 6-smart6 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=10000 error=0
+tc 6-smart5 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=3000 error=1 seed=13
+tc 6-smart6 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=3000 error=0 seed=24

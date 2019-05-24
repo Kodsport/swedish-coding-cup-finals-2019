@@ -90,11 +90,14 @@ void run() {
 	string treemode = Arg("tree", "random");
 	int extraEdges = Arg("calls");
 	int error = Arg("error");
+	int remEdges = Arg("remEdges", 0);
 
 	int instrs = 0;
 	vi pars = gen_tree(N, treemode);
+	rep(i,0,remEdges) pars[rand() % N] = -1;
 	vector<vector<pii>> bodies(N);
 	rep(i,1,N) {
+		if (pars[i] == -1) continue;
 		bodies[pars[i]].push_back({CALL, i});
 		instrs++;
 	}
@@ -212,6 +215,7 @@ void run() {
 	}
 
 	int origInstrs = instrs;
+	int origTryK = tryk;
 	while (instrs > L) {
 		tryk--;
 		instrs -= instrCount[tryk];
@@ -236,7 +240,7 @@ void run() {
 		instrs += sz(bodies[i]);
 	}
 
-	cerr << "Failures: " << err.count() << '/' << tryk
+	cerr << "Failures: " << err.count() << '/' << origTryK
 		<< ", instrs: " << origInstrs << '/' << L
 		<< ", reduced to " << instrs << endl;
 
