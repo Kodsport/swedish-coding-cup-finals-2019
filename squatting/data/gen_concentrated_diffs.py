@@ -1,32 +1,34 @@
-from random import randint
 from util import *
+import string
 
-S    = int(cmdlinearg('S'))
-length    = int(cmdlinearg('length'))
+S = int(float(cmdlinearg('s')))
+length = int(cmdlinearg('length', S))
 
-baseString = ""
-for i in range(length):
-    baseString += (chr(ord('a')+randint(0, 25)))
+alphabet = string.ascii_lowercase + '0123456789'
+
+baseString = ''.join(random.choice(alphabet) for _ in range(length))
 
 domains = set()
+ret = []
 domains.add(baseString)
+ret.append(baseString)
 attemptsLeft = 1e7//length
-maxI = 0
-while 2**(maxI+1) < length:
-    maxI += 1
+logn = 0
+while 2**(logn+1) < length:
+    logn += 1
+assert 2**logn < length
 
 while S >= length and attemptsLeft > 0:
     attemptsLeft -= 1
-    i = randint(0, maxI)
+    i = random.randint(0, logn)
     j = 2**i
-    domain = ""
-    for k in range(j):
-        domain += (chr(ord('a')+randint(0, 25)))
-    domain = baseString[:(length-j)] + domain
-    if not domain in domains:
+    domain = baseString[:(length-j)] + ''.join(random.choice(alphabet) for _ in range(j))
+    if domain not in domains:
         domains.add(domain)
+        ret.append(domain)
         S -= length
 
+random.shuffle(ret)
 print(len(domains))
-for domain in domains:
+for domain in ret:
     print(domain)
