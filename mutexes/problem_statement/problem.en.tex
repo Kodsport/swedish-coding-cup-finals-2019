@@ -18,7 +18,7 @@ The commands are each one of:
 \end{itemize}
 
 Anna is not sure if she implemented her mutexes correctly, and she wants your help to verify that three properties hold.
-Assuming a function \texttt{main} is called at the beginning of the program, you should check whether;
+Assuming a function \texttt{main} is called at the beginning of the program, you should check that:
 \begin{enumerate}
   \item whenever a data structure protected by a mutex $X$ is to be accessed, the mutex $X$ is currently acquired,
   \item whenever a mutex is to be acquired, the program has not already acquired it (in order to avoid a deadlock),
@@ -45,34 +45,36 @@ No two functions will have the same name, and there will always be a function ca
 It is guaranteed that there is no infinite recursion: a function will never call itself, either directly or through a chain of other functions.
 
 \section*{Output}
-If all properties hold, output \texttt{a-ok}.
+If the program is free from errors, output \texttt{a-ok}.
 
-Otherwise, for each property that does not hold, if
+Otherwise, output the first error that occurs during execution. Specifically:
 \begin{enumerate}
-  \item a data structure may be accessed without the correct mutex being acquired, output \texttt{corruption},
-  \item a deadlock may occur, output \texttt{deadlock},
-  \item a mutex may be released without being acquired, output \texttt{error}.
+  \item if a data structure is accessed without the correct mutex being acquired, output \texttt{corruption},
+  \item if a deadlock occurs, output \texttt{deadlock},
+  \item if a mutex is released without being acquired, output \texttt{error}.
 \end{enumerate}
-
-If there are several properties that don't hold, you should output them on separate lines, in the order given above.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points.
 To get the points for a test group you need to solve all test cases in the test group.
 Your final score will be the maximum score of a single submission.
 
+Let $L$ denote the total number of instructions among all functions, and $K$ the number of mutexes.
+
 \noindent
 \begin{tabular}{| l | l | l | l |}
 \hline
 Group & Points & Constraints \\ \hline
-% Simulera händelseförloppet
-1     & ??     & The number of instructions among all functions are at most 10. \\ \hline
-% Enkel begränsning, gör att man kan göra DP över vart man är och om den enda mutexen hålls.
-2     & ??     & There is only a single mutex, and the number of instructions among all functions are at most $50\,000$. \\ \hline
-% Naiv Kubiskt
-3     & ??     & The number of instructions among all functions are at most 500. \\ \hline
-% Naiv kvadratisk
-4     & ??     & The number of instructions among all functions are at most $10\,000$. \\ \hline
-% Konstaktfaktoroptimeringar? Bitsets?
-5     & ??     & The number of instructions among all functions are at most $50\,000$. \\ \hline
+% Simulate everything
+1     & TBD    & $L \le 10$ \\ \hline
+% DP over position and whether the only mutex is held
+2     & TBD    & $L \le 1000$, $K = 1$. It doesn't matter which error you output. \\ \hline
+% DP per mutex
+3     & TBD    & $L \le 1000$. It doesn't matter which error you output. \\ \hline
+% + reconstruction
+4     & TBD    & $L \le 1000$ \\ \hline
+% BFS
+5     & TBD    & $L \le 50\,000$, no \texttt{release} or \texttt{access} commands will be performed. \\ \hline
+% Bitsets
+6     & TBD    & $L \le 50\,000$ \\ \hline
 \end{tabular}
