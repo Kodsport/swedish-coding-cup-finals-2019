@@ -14,6 +14,7 @@ N=200000
 samplegroup
 limits n=1000 k=1000
 sample 1
+sample 2
 
 group group1 5
 limits n=1000 k=10
