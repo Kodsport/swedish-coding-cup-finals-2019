@@ -1,4 +1,5 @@
 #include "validator.h"
+#include <queue>
 using namespace std;
 
 string token(char sep) {
@@ -34,7 +35,7 @@ vi topo_sort(const vector<vi>& gr) {
 
 void run() {
 	int L = Arg("l");
-	int K = Arg("k");
+	int K = Arg("k", L);
 	int onlyAcq = Arg("onlyacq", 0);
 	int n = Int(1, L);
 	set<string> mutexes;
