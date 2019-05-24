@@ -1,4 +1,4 @@
-2
+3
 5 main
 acquire mutex
 call foo
@@ -7,4 +7,6 @@ call foo
 acquire mutex
 2 foo
 access mutex
+release mutex
+1 bar
 release mutex
