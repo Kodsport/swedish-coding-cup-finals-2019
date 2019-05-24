@@ -22,7 +22,7 @@ samplegroup
 limits nMax=100 xMax=$MAXX
 sample 1
 
-group group1 5
+group group1 10
 limits nMax=20 xMax=$MAXX
 tc smalln0 gen_random n=2   maxx=5
 tc smalln1 gen_random n=3   maxx=10  
@@ -36,12 +36,12 @@ tc smalln8 gen_line   n=20  maxx=$MAXX        lines=3
 tc smalln9 gen_random n=1   maxx=$MAXX
 tc smalln10 gen_answer_is_barely_3 20 40
 
-group group2 13
+group group2 7
 limits nMax=800 xMax=$MAXX nocolinear=1
 # TODO
 tc nocolinear1 gen_random n=800  maxx=$MAXX
 
-group group3 13
+group group3 8
 limits nMax=800 xMax=$MAXX
 include_group group2
 include_group group1
@@ -56,11 +56,11 @@ tc mediumn7 gen_line n=800  maxx=$MAXX   lines=3
 tc mediumn8 gen_line n=800  maxx=$MAXX   lines=10
 tc mediumn9 gen_answer_is_barely_3 800 $MAXX
 
-group group4 13
+group group4 10
 limits nMax=$MAXN xMax=$MAXX
 # Copied from group 6 below
 
-group group5 13
+group group5 15
 limits nMax=$MAXN xMax=$MAXX convexhull=1
 tc bign_convex0 gen_convex_hull n=$MAXN  maxx=$MAXX
 tc bign_convex1 gen_convex_hull n=$MAXN  maxx=$MAXX
@@ -69,7 +69,7 @@ tc bign_convex3 gen_convex_hull n=$MAXN  maxx=$MAXX
 tc bign_convex4 gen_convex_hull n=$MAXN  maxx=$MAXX
 tc bign_convex5 gen_convex_hull n=$MAXN  maxx=$MAXX
 
-group group6 13
+group group6 25
 limits nMax=$MAXN xMax=$MAXX
 include_group group5
 include_group group3

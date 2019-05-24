@@ -21,7 +21,7 @@ sample 4
 
 # Simulate everything
 # $L \le 10$
-group group1 5
+group group1 7
 limits l=10
 tc 1-rand1 gen_random n=1 l=10 k=2
 tc 1-rand2 gen_random n=3 l=10 k=2
@@ -36,7 +36,7 @@ tc 1-smart6 gen n=3 l=1000 eachlo=1 eachhi=2 tryk=50000 tree=random calls=2 erro
 
 # DP over position and whether the only mutex is held
 # $L \le 1000$, $K = 1$. It doesn't matter which error you output.
-group group2 5
+group group2 10
 limits l=1000 k=1
 tc 2-rand1 gen_random n=2 l=1000 k=1
 tc 2-rand2 gen_random n=100 l=1000 k=1
@@ -65,7 +65,7 @@ tc 3-smart6 gen n=300 l=1000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=50 
 
 # + reconstruction
 # $L \le 1000$ \\ \hline
-group group4 5
+group group4 15
 limits l=1000
 include_group group1
 include_group group3
@@ -88,7 +88,7 @@ done
 
 # BFS
 # $L \le 50\,000$. No \texttt{release} or \texttt{access} commands will be performed.
-group group5 5
+group group5 10
 limits l=50000 onlyacq=1
 tc 5-rand1 gen_random n=1 l=50000 k=100000 onlyacq=1
 tc 5-rand2 gen_random n=100 l=50000 k=100000 onlyacq=1
@@ -101,7 +101,7 @@ tc 5-smart6 gen n=15000 l=50000 eachlo=1 eachhi=2 tryk=500000 tree=random calls=
 
 # Bitsets
 # $L \le 50\,000$
-group group6 5
+group group6 13
 limits l=50000
 include_group group4
 include_group group5

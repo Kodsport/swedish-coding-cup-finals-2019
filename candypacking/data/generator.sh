@@ -23,7 +23,7 @@ limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
 sample 1
 sample 2
 
-group g1 10
+group group1 6
 limits maxA=2 maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
 tc smalla-big01 gen_rand a=1 m=100000 k=100000
 tc smalla-big02 gen_rand a=2 m=100000 k=100000
@@ -44,7 +44,7 @@ tc smalla-onebox01 gen_onebox a=2 m=100000
 tc smalla-onebox02 gen_onebox a=2 m=100000
 tc smalla-onebox03 gen_onebox a=2 m=100000
 
-group g2 11
+group group2 5
 limits maxA=$MAXA maxM=2 maxAsum=$MAXASUM maxK=$MAXK
 tc smallm-big01 gen_rand a=$MAXA m=2 k=100000
 tc smallm-big02 gen_rand a=$MAXA m=2 k=100000
@@ -68,9 +68,9 @@ tc smallm-onebox04 gen_onebox a=10 m=2
 tc smallm-onebox05 gen_onebox a=10 m=2
 tc smallm-onebox06 gen_onebox a=10 m=2
 
-group g3 12
+group group3 15
 limits maxA=$MAXA maxM=$MAXM maxAsum=1000000 maxK=$MAXK
-include_group g1
+include_group group1
 tc smallsum-small01 gen_randomsum suma=1000000 groups=10
 tc smallsum-small02 gen_randomsum suma=1000000 groups=10
 tc smallsum-small03 gen_randomsum suma=1000000 groups=100
@@ -90,11 +90,10 @@ tc smallsum-onebox01 gen_onebox a=10000 m=100
 tc smallsum-onebox02 gen_onebox a=1000 m=1000
 tc smallsum-onebox03 gen_onebox a=100 m=10000
 
-group g4 14
+group group4 14
 limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
-include_group g1
-include_group g2
-include_group g3
+include_group group2
+include_group group3
 tc small01 gen_randomsum suma=$MAXA groups=10
 tc small02 gen_randomsum suma=$MAXA groups=10
 tc small03 gen_randomsum suma=$MAXA groups=100

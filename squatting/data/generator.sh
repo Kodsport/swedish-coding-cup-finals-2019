@@ -25,7 +25,7 @@ tc 1-small-conc1 gen_concentrated_diffs s=500 length=5
 tc 1-small-conc2 gen_concentrated_diffs s=500 length=8
 tc 1-small-conc3 gen_concentrated_diffs s=500 length=250
 
-group group2 5
+group group2 16
 limits s=1e5 len=100
 tc 2-short-rand1 gen_random s=1e5 minLength=1 maxLength=100
 tc 2-short-rand2 gen_random s=1e5 minLength=1 maxLength=10
@@ -36,7 +36,7 @@ tc 2-short-conc2 gen_concentrated_diffs s=1e5 length=8
 tc 2-short-conc3 gen_concentrated_diffs s=1e5 length=100
 tc 2-short-abba gen_abba logn=6
 
-group group3 5
+group group3 14
 limits s=3e5
 include_group group1
 include_group group2
@@ -48,7 +48,7 @@ tc 3-large-conc2 gen_concentrated_diffs s=3e5 length=8
 tc 3-large-conc3 gen_concentrated_diffs s=3e5 length=250
 tc 3-large-abba gen_abba logn=15
 
-group group4 5
+group group4 15
 limits s=3e6
 include_group group3
 tc 4-huge-rand1 gen_random s=3e6 minLength=1 maxLength=10
