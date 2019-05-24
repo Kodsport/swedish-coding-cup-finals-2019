@@ -12,6 +12,7 @@ domains = set()
 ret = []
 domains.add(baseString)
 ret.append(baseString)
+S -= len(baseString)
 attemptsLeft = 1e7//length
 logn = 0
 while 2**(logn+1) < length:

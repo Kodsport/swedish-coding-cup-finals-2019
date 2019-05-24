@@ -8,6 +8,7 @@ use_solution sl_opt.cpp opt
 
 compile gen_random.py
 compile gen_concentrated_diffs.py
+compile gen_abba.py
 
 samplegroup
 limits s=10000
@@ -32,6 +33,7 @@ tc 2-short-rand4 gen_random s=1e5 minLength=4 maxLength=4
 tc 2-short-conc5 gen_concentrated_diffs s=1e5 length=5
 tc 2-short-conc6 gen_concentrated_diffs s=1e5 length=8
 tc 2-short-conc7 gen_concentrated_diffs s=1e5 length=100
+tc 2-short-abba gen_abba logn=6
 
 group group3 5
 limits s=3e5
@@ -43,6 +45,7 @@ tc 3-large-rand3 gen_random s=3e5 minLength=4 maxLength=4
 tc 3-large-conc4 gen_concentrated_diffs s=3e5 length=5
 tc 3-large-conc5 gen_concentrated_diffs s=3e5 length=8
 tc 3-large-conc6 gen_concentrated_diffs s=3e5 length=250
+tc 3-large-abba gen_abba logn=15
 
 group group4 5
 limits s=3e6
@@ -53,3 +56,4 @@ tc 4-huge-rand3 gen_random s=3e6 minLength=4 maxLength=4
 tc 4-huge-conc4 gen_concentrated_diffs s=3e6 length=5
 tc 4-huge-conc5 gen_concentrated_diffs s=3e6 length=8
 tc 4-huge-conc6 gen_concentrated_diffs s=3e6 length=250
+tc 4-huge-abba gen_abba logn=19
