@@ -12,10 +12,10 @@ void run() {
 
 	int M = Int(1, maxM);
 	Space();
-  Int(1, maxK);
+  Int(2, maxK);
   Endl();
   
   vector<int> A = SpacedInts(M, 1, maxA);
   long long sum = accumulate(A.begin(), A.end(), 0LL);
-  assert(sum < maxASum);
+  assert(sum <= maxASum);
 }
