@@ -20,7 +20,7 @@ struct Point {
 	P operator*(T d) const { return P(x*d, y*d); }
 	P operator/(T d) const { return P(x/d, y/d); }
 	T dot(P p) const { return x*p.x + y*p.y; }
-	T dist2() const { return x*x + y*y; }
+	ll dist2() const { return (ll)x*x + (ll)y*y; }
 	P perp() const { return P(-y, x); } // rotates +90 degrees
 };
 
