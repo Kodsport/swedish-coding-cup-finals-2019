@@ -1,0 +1,10 @@
+3
+2 f
+acquire x
+call g
+2 g
+access x
+acquire y
+2 main
+call f
+call g

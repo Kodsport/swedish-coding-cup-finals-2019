@@ -1,0 +1,10 @@
+2
+5 main
+acquire mutex
+call foo
+acquire mutex
+call foo
+acquire mutex
+2 foo
+access mutex
+release mutex
