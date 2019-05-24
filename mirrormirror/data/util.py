@@ -9,4 +9,3 @@ def cmdlinearg(name, default=None):
     return default
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
-

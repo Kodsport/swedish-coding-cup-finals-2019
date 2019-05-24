@@ -1,8 +1,5 @@
 /* usage:
- * ./a.out input_file answer_file feedback_dir answer_margin < contestants_output
- * ./a.out input_file answer_file < contestants_output
- *
- * input_file and feedback_dir are unused but must be provided to comply with format.
+ * ./a.out input_file answer_file feedback_dir < contestants_output
 */
 #include <bits/stdc++.h>
 
@@ -15,19 +12,9 @@ int main(int argc, char **argv) {
     }
 
     int margin = 0;
-    for (int i = 4; i < argc; i++) {
-        string arg = argv[i];
-        size_t index = arg.find('=');
-        if (index == string::npos) continue;
-
-        auto name = arg.substr(0, index), value = arg.substr(index + 1);
-        if (name == "margin") {
-            margin = stoi(value);
-        }
-    }
-
     int correctAnswer, provided;
     ifstream answerStream(argv[2]);
+    if (answerStream.peek() == ' ') margin = 1; // hack, see data/generator.sh
     answerStream >> correctAnswer;
     cin >> provided;
 

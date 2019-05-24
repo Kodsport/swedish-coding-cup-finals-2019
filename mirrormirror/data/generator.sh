@@ -51,7 +51,9 @@ tc mediumn7 gen_line n=800  maxx=$MAXX   lines=3
 tc mediumn8 gen_line n=800  maxx=$MAXX   lines=10
 tc mediumn9 gen_answer_is_barely_3 800 $MAXX
 
-# TODO: testgrupp 4
+group group4 13
+limits nMax=$MAXN xMax=$MAXX
+# Copied from group 6 below
 
 group group5 13
 limits nMax=$MAXN xMax=$MAXX
@@ -76,3 +78,12 @@ tc bign8 gen_line n=$MAXN  maxx=$MAXX    lines=3
 tc bign9 gen_line n=$MAXN  maxx=$MAXX    lines=10
 tc bign10 gen_random n=$MAXN  maxx=32 # The smallest square that fits 4000 points
 tc bign11 gen_answer_is_2 $MAXN $MAXX
+
+wait
+for A in secret/group6/*.in; do
+	# We don't have output validator flags per test group in Kattis, so hack it by adding some whitespace
+	B=$(basename $A .in)
+	echo ' ' > secret/group4/offbyone-$B.in
+	cat secret/group6/$B.in >> secret/group4/offbyone-$B.in
+	cp secret/group6/$B.ans secret/group4/offbyone-$B.ans
+done
