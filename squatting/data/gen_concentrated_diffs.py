@@ -2,7 +2,7 @@ from util import *
 import string
 
 S = int(float(cmdlinearg('s')))
-length = int(cmdlinearg('length', S))
+length = int(float(cmdlinearg('length', S)))
 
 alphabet = string.ascii_lowercase + '0123456789'
 
