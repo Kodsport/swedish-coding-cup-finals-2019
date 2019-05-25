@@ -2,6 +2,8 @@
 
 USE_SYMLINKS=1
 
+ulimit -s unlimited
+
 PPATH=$(realpath ..)
 
 . ../../testdata_tools/gen.sh
@@ -27,12 +29,12 @@ tc 1-rand1 gen_random n=1 l=10 k=2
 tc 1-rand2 gen_random n=3 l=10 k=2
 tc 1-rand3 gen_random n=3 l=10 k=2
 tc 1-rand4 gen_random n=3 l=10 k=2
-tc 1-smart1 gen n=1 l=1000 eachlo=3 eachhi=4 tryk=50000 tree=shallow calls=0 error=0
-tc 1-smart2 gen n=2 l=1000 eachlo=2 eachhi=4 tryk=50000 tree=shallow calls=0 error=1
-tc 1-smart3 gen n=2 l=1000 eachlo=2 eachhi=4 tryk=50000 tree=random calls=0 error=0
-tc 1-smart4 gen n=2 l=1000 eachlo=1 eachhi=2 tryk=50000 tree=random calls=1 error=1
-tc 1-smart5 gen n=3 l=1000 eachlo=1 eachhi=2 tryk=50000 tree=random calls=1 error=1
-tc 1-smart6 gen n=3 l=1000 eachlo=1 eachhi=2 tryk=50000 tree=random calls=2 error=0
+tc 1-smart1 gen n=1 l=10 eachlo=3 eachhi=4 tryk=50000 tree=shallow calls=0 error=0
+tc 1-smart2 gen n=2 l=10 eachlo=2 eachhi=4 tryk=50000 tree=shallow calls=0 error=1
+tc 1-smart3 gen n=2 l=10 eachlo=2 eachhi=4 tryk=50000 tree=random calls=0 error=0
+tc 1-smart4 gen n=2 l=10 eachlo=1 eachhi=2 tryk=50000 tree=random calls=1 error=1
+tc 1-smart5 gen n=3 l=10 eachlo=1 eachhi=2 tryk=50000 tree=random calls=1 error=1
+tc 1-smart6 gen n=3 l=10 eachlo=1 eachhi=2 tryk=50000 tree=random calls=2 error=0
 
 # DP over position and whether the only mutex is held
 # $L \le 1000$, $K = 1$. It doesn't matter which error you output.
@@ -41,7 +43,7 @@ limits l=1000 k=1
 tc 2-rand1 gen_random n=2 l=1000 k=1
 tc 2-rand2 gen_random n=100 l=1000 k=1
 tc 2-rand3 gen_random n=3 l=10 k=1
-tc 2-deep1 gen n=100 l=1000 k=1 eachlo=7 eachhi=10 tryk=500000 tree=deeper calls=200 error=0 seed=123
+tc 2-deep1 gen n=100 l=1000 k=1 eachlo=6 eachhi=8 tryk=500000 tree=deeper calls=200 error=0 seed=123
 tc 2-deep2 gen n=100 l=1000 k=1 eachlo=6 eachhi=8 tryk=500000 tree=deeper calls=200 error=1 seed=123
 tc 2-deep3 gen n=100 l=1000 k=1 eachlo=6 eachhi=8 tryk=500000 tree=deeper calls=200 error=2 seed=123
 tc 2-smart1 gen n=100 l=1000 k=1 eachlo=7 eachhi=10 tryk=500000 tree=shallow calls=100 error=0 seed=123

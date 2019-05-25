@@ -44,7 +44,7 @@ void run() {
 	vector<vector<string>> eds1;
 	map<string, int> fnames;
 	for (int i = 0; i < n; i++) {
-		int instr = Int(1, L);
+		int instr = Int(0, L);
 		Space();
 		string fname = token('\n');
 		fnames[fname] = i;
@@ -69,7 +69,7 @@ void run() {
 	}
 
 	assert(sz(mutexes) <= K);
-	assert(sz(mutexes) >= 1); // since all function lengths >= 1, and no loops
+	assert(sz(mutexes) >= 1); // sanity
 
 	// Resolve function names
 	assert(fnames.count("main"));
