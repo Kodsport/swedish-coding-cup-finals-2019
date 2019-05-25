@@ -48,7 +48,7 @@ int main() {
     // (mx - Y) * K <= sum * (K - 1)
     // mx * K - sum * (K - 1) <= YK
     // mx - sum * (K - 1) / K <= Y
-    ll changes = max(0LL, mx - sum * (K - 1) / K);
+    ll changes = max(0LL, mx - min(sum, 1LL<<32) * (K - 1) / K);
     cout << sum / K << " " << changes << endl;
   }
 }
