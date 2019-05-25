@@ -22,6 +22,10 @@ int main(){
     rep(i,0,M) {
         cin >> a[i];
     }
+    if (M == 1 && a[0] > K) {
+        cout << a[0]/K << " " << a[0]/K << endl;
+        return 0;
+    }
     ll maxA = *max_element(all(a));
     ll sumA = accumulate(all(a), 0LL);
     ll boxes = sumA/K;
