@@ -4,7 +4,7 @@ PPATH=$(realpath ..)
 
 . ../../testdata_tools/gen.sh
 
-use_solution fieldtrip2_js.cpp
+use_solution candypacking_mw.cpp
 
 compile gen_rand.py
 compile gen_samea.py
