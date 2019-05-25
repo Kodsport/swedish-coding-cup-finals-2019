@@ -38,7 +38,7 @@ int main() {
     cout << 1 << " " << rem << endl;
   } else {
     ll remove = sum % K;
-    ll mx = groups.back();
+    ll mx = groups.front();
     
     mx -= remove;
     sum -= remove;
