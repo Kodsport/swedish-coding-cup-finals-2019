@@ -31,6 +31,7 @@ int main() {
     }
     trav(it, groups) {
       if (left <= 0) break;
+      if (it == 1) continue;
       left--;
       rem += it - 1;
     }
