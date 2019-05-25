@@ -74,11 +74,7 @@ tc 3-mediumn7 gen_line n=800  maxx=$MAXX   lines=3
 tc 3-mediumn8 gen_line n=800  maxx=$MAXX   lines=10
 tc 3-mediumn9 gen_answer_is_barely_3 800 $MAXX
 
-group group4 10
-limits nMax=$MAXN xMax=$MAXX
-# Copied from group 6 below
-
-group group5 15
+group group4 20
 limits nMax=$MAXN xMax=$MAXX convexhull=1
 tc 5-bign_convex0 gen_convex_hull n=$MAXN  maxx=$MAXX fact=1   wobble=0
 tc 5-bign_convex1 gen_convex_hull n=$MAXN  maxx=$MAXX fact=400 wobble=2
@@ -100,9 +96,9 @@ tc 1-n4
 tc 1-n5
 tc 1-n6
 
-group group6 25
+group group5 25
 limits nMax=$MAXN xMax=$MAXX
-include_group group5
+include_group group4
 include_group group3
 tc 6-bign1 gen_random n=$MAXN  maxx=$MAXX
 tc 6-bign2 gen_random n=$MAXN  maxx=$MAXX
@@ -120,12 +116,3 @@ tc 6-a-is2-1 gen_answer_is_2 $MAXN $MAXX
 tc 6-c-barely3-3 gen_answer_is_barely_3 $MAXN $MAXX
 tc 6-c-barely3-4 gen_answer_is_barely_3 $MAXN $MAXX
 tc 6-c-is2-2 gen_answer_is_2 $MAXN $MAXX
-
-wait
-for A in secret/group6/*.in; do
-	# We don't have output validator flags per test group in Kattis, so hack it by adding some whitespace
-	B=$(basename $A .in)
-	cp secret/group6/$B.in secret/group4/offbyone-$B.in
-	echo ' ' > secret/group4/offbyone-$B.ans
-	cat secret/group6/$B.ans >> secret/group4/offbyone-$B.ans
-done
