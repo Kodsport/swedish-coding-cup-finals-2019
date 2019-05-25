@@ -22,13 +22,16 @@ struct Command {
 struct Function {
     vector<Command> commands;
 
-    set<string> rec(set<string> acquired);
+    void rec(set<string>& acquired);
 };
 
 map<string, Function> functions;
 
-set<string> Function::rec(set<string> acquired) {
-    for (Command c : commands) {
+int exec;
+
+void Function::rec(set<string>& acquired) {
+    for (Command& c : commands) {
+        exec++;
         if (c.type == "acquire") {
             if (acquired.count(c.arg)) {
                 cout << "deadlock" << endl;
@@ -50,17 +53,16 @@ set<string> Function::rec(set<string> acquired) {
             }
         }
         else if (c.type == "call") {
-            acquired = functions[c.arg].rec(acquired);
+            functions[c.arg].rec(acquired);
         }
         else {
             assert(0);
         }
     }
-    return acquired;
 }
 
 int main(){
-	ios::sync_with_stdio(0);
+    ios::sync_with_stdio(0);
     int N;
     cin >> N;
     rep(i,0,N) {
@@ -75,6 +77,8 @@ int main(){
         }
         functions[name] = f;
     }
-    functions["main"].rec(set<string>());
+    set<string> acquired;
+    functions["main"].rec(acquired);
     cout << "a-ok" << endl;
+    cerr << exec << " instructions executed" << endl;
 }
