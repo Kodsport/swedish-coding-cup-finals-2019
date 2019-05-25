@@ -8,6 +8,7 @@ use_solution sl.cpp opt
 
 compile gen_random.py
 compile gen_n2.py
+compile gen_mw.py
 
 N=200000
 
@@ -64,3 +65,4 @@ tc 4-rand2 gen_random 1=80000 2=110000 b=5000 k=50000
 tc 4-rand3 gen_random 1=80000 2=110000 b=5000 k=10000
 tc 4-rand4 gen_random 1=80000 2=110000 b=5000 k=3000
 tc 4-n2 gen_n2 k=30000 n=200000 seed=128
+tc 4-mw gen_mw k=400 n=200000
