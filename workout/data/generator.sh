@@ -55,7 +55,7 @@ limits maxW=1000 maxK=1000
 tw 2 1000 1000
 
 # Naively loop over number of failures and simulate having every number of them in beginning/end
-group g3 15
+group g3 10
 limits maxW=$E18 maxK=1000
 include_group g1
 include_group g2

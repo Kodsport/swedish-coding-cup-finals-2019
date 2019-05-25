@@ -61,7 +61,7 @@ tc 3-aslowmw-1 gen_random 1=1 2=9900 b=190000 k=200 seed=3
 tc 3-slowmw-2 gen_random 1=60 2=90 b=199850 k=200 seed=6
 tc 3-slowmw-3 gen_random 1=700 2=0 b=199000 k=200 seed=1
 
-group group4 31
+group group4 21
 limits n=$N k=$N
 include_group group3
 tc 4-rand1 gen_random 1=80000 2=110000 b=5000 k=180000

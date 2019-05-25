@@ -74,7 +74,7 @@ tc 3-mediumn7 gen_line n=800  maxx=$MAXX   lines=3
 tc 3-mediumn8 gen_line n=800  maxx=$MAXX   lines=10
 tc 3-mediumn9 gen_answer_is_barely_3 800 $MAXX
 
-group group4 20
+group group4 25
 limits nMax=$MAXN xMax=$MAXX convexhull=1
 tc 5-bign_convex0 gen_convex_hull n=$MAXN  maxx=$MAXX fact=1   wobble=0
 tc 5-bign_convex1 gen_convex_hull n=$MAXN  maxx=$MAXX fact=400 wobble=2

@@ -23,7 +23,7 @@ limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
 sample 1
 sample 2
 
-group group1 6
+group group1 10
 limits maxA=2 maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
 tc smalla-big01 gen_rand a=1 m=100000 k=100000
 tc smalla-big02 gen_rand a=2 m=100000 k=100000
@@ -45,7 +45,7 @@ tc smalla-onebox01 gen_onebox a=2 m=100000
 tc smalla-onebox02 gen_onebox a=2 m=100000
 tc smalla-onebox03 gen_onebox a=2 m=100000
 
-group group2 5
+group group2 14
 limits maxA=$MAXA maxM=2 maxAsum=$MAXASUM maxK=$MAXK
 tc smallm-big01 gen_rand a=$MAXA m=2 k=100000
 tc smallm-big02 gen_rand a=$MAXA m=2 k=100000
@@ -97,7 +97,7 @@ tc smallsum-samea03 gen_samea a=7 m=1 k=7
 tc smallsum-samea04 gen_samea a=74 m=1 k=73
 tc smallsum-samea05 gen_samea a=752381 m=1 k=2
 
-group group4 14
+group group4 16
 limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
 include_group group2
 include_group group3
