@@ -21,7 +21,7 @@ int main() {
   sort(all(groups));
 
   ll sum = accumulate(all(groups), 0LL);
-  if (sum / K == 1 && N > 1) {
+  if (sum / K == 1 && (N > 1 || sum == K)) {
     int rem = 0;
     int left = K;
     trav(it, groups) {
