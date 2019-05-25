@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 	}
 
 	ifstream answerStream(argv[2]);
-	bool equivalentErrors;
+	bool equivalentErrors = 0;
     if (answerStream.peek() == ' ') equivalentErrors = 1; // hack, see data/generator.sh
 
 	string correct, user;
