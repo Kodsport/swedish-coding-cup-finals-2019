@@ -19,7 +19,6 @@ int main() {
   vi groups(N);
   rep(i,0,N) cin >> groups[i];
   sort(all(groups));
-  reverse(all(groups));
 
   ll sum = accumulate(all(groups), 0LL);
   if (sum / K == 0) {

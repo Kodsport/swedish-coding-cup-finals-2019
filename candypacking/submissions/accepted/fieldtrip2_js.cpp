@@ -19,7 +19,6 @@ int main() {
   vi groups(N);
   rep(i,0,N) cin >> groups[i];
   sort(all(groups));
-  reverse(all(groups));
 
   ll sum = accumulate(all(groups), 0LL);
   if (sum / K == 0) {
@@ -38,7 +37,7 @@ int main() {
     cout << 1 << " " << rem << endl;
   } else {
     ll remove = sum % K;
-    ll mx = groups.front();
+    ll mx = groups.back();
     
     mx -= remove;
     sum -= remove;
