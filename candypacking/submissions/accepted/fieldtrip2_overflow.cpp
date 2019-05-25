@@ -23,7 +23,7 @@ int main() {
   ll sum = accumulate(all(groups), 0);
   if (sum / K == 0) {
     cout << "0 0" << endl;
-  } else if (sum / K == 1) {
+  } else if (sum / K == 1 && N > 1) {
     int rem = 0;
     int left = K;
     trav(it, groups) {
