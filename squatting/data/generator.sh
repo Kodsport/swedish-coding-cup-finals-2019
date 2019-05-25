@@ -9,6 +9,7 @@ use_solution sl_opt.cpp opt
 compile gen_random.py
 compile gen_concentrated_diffs.py
 compile gen_abba.py
+compile gen_treediffs.py
 
 samplegroup
 limits s=10000
@@ -35,6 +36,7 @@ tc 2-short-conc1 gen_concentrated_diffs s=1e5 length=5
 tc 2-short-conc2 gen_concentrated_diffs s=1e5 length=8
 tc 2-short-conc3 gen_concentrated_diffs s=1e5 length=100
 tc 2-short-abba gen_abba logn=6
+tc 3-large-treediff gen_treediffs l=10 n=10000
 
 group group3 14
 limits s=3e5
@@ -47,6 +49,8 @@ tc 3-large-conc1 gen_concentrated_diffs s=3e5 length=5
 tc 3-large-conc2 gen_concentrated_diffs s=3e5 length=8
 tc 3-large-conc3 gen_concentrated_diffs s=3e5 length=250
 tc 3-large-abba gen_abba logn=15
+tc 3-large-treediff1 gen_treediffs l=10 n=30000
+tc 3-large-treediff2 gen_treediffs l=70000 n=4
 
 group group4 15
 limits s=3e6
@@ -58,3 +62,5 @@ tc 4-huge-conc1 gen_concentrated_diffs s=3e6 length=5
 tc 4-huge-conc2 gen_concentrated_diffs s=3e6 length=8
 tc 4-huge-conc3 gen_concentrated_diffs s=3e6 length=250
 tc 4-huge-abba gen_abba logn=19
+tc 4-huge-treediff1 gen_treediffs l=10 n=300000
+tc 4-huge-treediff2 gen_treediffs l=700000 n=4
