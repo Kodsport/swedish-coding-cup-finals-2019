@@ -4,3 +4,5 @@ license: cc by-sa
 type: scoring
 grading:
     show_test_data_groups: yes
+limits:
+    time_multiplier: 17
