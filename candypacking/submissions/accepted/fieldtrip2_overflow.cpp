@@ -33,7 +33,7 @@ int main() {
     trav(it, groups) {
       if (left <= 0) break;
       left--;
-      rem += it;
+      rem += it - 1;
     }
     cout << 1 << " " << rem << endl;
   } else {
