@@ -24,13 +24,13 @@ The candies should all be packed into boxes of size $K$.
 In addition to the above marketing rules, a box must also be packed with exactly $K$ candies.
 
 These rules can make it impossible to pack all candies -- for example, if you only have candies of a single kind, you would never be able to pack a box!
-Likewise, if you have boxes of size $2$ and an odd number of candies, at least one candy got to go.
+Likewise, if you have boxes of size $2$ and an odd number of candies, at least one candy will be left over.
 
-To help the situation, you can take a piece of candy and make an entire new kind of it by adding random ingredients.
+To help the situation, you can take a piece of candy and make it into an entirely new kind of candy by adding random ingredients.
 You may do this any number of times, but since it's a very expensive process you would prefer to do it as few times as possible.
 You also want to pack as many boxes of candy as possible.
 
-What is the maximum number of boxes of candy you can pack, and what is the least number of new kinds of candy you need to create in order to pack this number of boxes?
+What is the maximum number of boxes of candy you can pack, and what is the least number of candies that you need to modify in order to pack this number of boxes?
 
 \section*{Input}
 The first line contains the two space-separated integers $M$ and $K$ ($1 \le M \le 10^5$, $2 \le K \le 10^9$).
@@ -38,7 +38,7 @@ The first line contains the two space-separated integers $M$ and $K$ ($1 \le M \
 The next line contains $M$ integers $a_1, \dots, a_M$ ($1 \le a_i \le 10^9$), the number of candies of each kind.
 
 \section*{Output}
-Output two integers, the maximum number of boxes of candy that can be packed, and the least number of new kinds of candy you have to create to pack this number of boxes.
+Output two integers, the maximum number of boxes of candy that can be packed, and the least number of candies that you need to modify to pack this number of boxes.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points.
