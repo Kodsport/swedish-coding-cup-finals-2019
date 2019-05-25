@@ -70,8 +70,8 @@ void run() {
 	assert((int)s.size() == n);
 
 	if (nocolinear) {
-		set<pii> slopes;
 		for (int i = 0; i < n; i++) {
+			set<pii> slopes;
 			for (int j = i + 1; j < n; j++) {
 				int dx = sv[i].first - sv[j].first;
 				int dy = sv[i].second - sv[j].second;
