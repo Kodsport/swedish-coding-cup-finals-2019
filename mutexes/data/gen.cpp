@@ -44,7 +44,7 @@ vi gen_tree(int n, string mode) {
 		int pred;
 		switch (imode) {
 		case RANDOM:
-            pred = rand() % i;
+			pred = rand() % i;
 			break;
 		case STAR:
 			pred = 0;
@@ -53,29 +53,29 @@ vi gen_tree(int n, string mode) {
 			pred = i-1;
 			break;
 		case SHALLOW:
-            pred = (int)pow(unif(0, pow(i, 0.2)), 5);
+			pred = (int)pow(unif(0, pow(i, 0.2)), 5);
 			break;
 		case DEEP:
-            pred = i-1 - (int)pow(unif(0, pow(i, 0.1)), 10);
+			pred = i-1 - (int)pow(unif(0, pow(i, 0.1)), 10);
 			break;
 		case DEEPER:
-            if (i < 4) {
-                pred = rand() % i;
+			if (i < 4) {
+				pred = rand() % i;
 			}
-            else {
-                double hi = log2(log2(i));
-                pred = i - (int) pow(2, pow(2, min({unif(-3, hi), unif(-3, hi), unif(-3, hi)})));
+			else {
+				double hi = log2(log2(i));
+				pred = i - (int) pow(2, pow(2, min({unif(-3, hi), unif(-3, hi), unif(-3, hi)})));
 			}
 			break;
 		default:
-            assert(false);
+			assert(false);
 		}
-        assert(0 <= pred && pred < i);
-        pars[i] = pred;
-        depth.push_back(depth[pred] + 1);
+		assert(0 <= pred && pred < i);
+		pars[i] = pred;
+		depth.push_back(depth[pred] + 1);
 	}
 	cerr << "max depth = " << *max_element(all(depth)) << endl;
-    return pars;
+	return pars;
 }
 
 void run() {
@@ -86,11 +86,19 @@ void run() {
 	int tryk = Arg("tryk");
 	int eachlo = Arg("eachlo");
 	int eachhi = Arg("eachhi");
-	int max_types = (int)Arg("onlyacq", 0) == 0 ? 3 : 1;
+	int onlyacq = Arg("onlyacq", 0);
+	int max_types = onlyacq ? 1 : 3;
 	string treemode = Arg("tree", "random");
 	int extraEdges = Arg("calls");
 	int error = Arg("error");
 	int remEdges = Arg("remEdges", 0);
+	int endError = 0;
+	if (error > 1) {
+		error = 0;
+		endError = 1;
+		L--;
+		if (onlyacq) L--;
+	}
 
 	int instrs = 0;
 	vi pars = gen_tree(N, treemode);
@@ -230,11 +238,14 @@ void run() {
 	}
 
 	instrs = 0;
+	int anyMutex = 0;
 	rep(i,0,N) {
 		vector<pii> nb;
 		trav(is, bodies[i]) {
 			if (is.first == CALL || (!err[is.second] && is.second < tryk))
 				nb.push_back(is);
+			if (is.first != CALL && !err[is.second] && is.second < tryk)
+				anyMutex = is.second;
 		}
 		bodies[i] = move(nb);
 		instrs += sz(bodies[i]);
@@ -249,6 +260,19 @@ void run() {
 	random_shuffle(all(order));
 	vector<string> names(N);
 	names[0] = "main";
+	if (endError) {
+		if (oneouts[main][anyMutex])
+			bodies[0].push_back({ACQUIRE, anyMutex});
+		else {
+			if (onlyacq) {
+				bodies[0].push_back({ACQUIRE, anyMutex});
+				bodies[0].push_back({ACQUIRE, anyMutex});
+			}
+			else {
+				bodies[0].push_back({ACCESS, anyMutex});
+			}
+		}
+	}
 	rep(i,1,N) names[i] = rand_name();
 	vector<string> mutNames(tryk);
 	rep(i,0,tryk) mutNames[i] = rand_name();
