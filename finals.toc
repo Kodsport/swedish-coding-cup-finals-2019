@@ -1,0 +1,8 @@
+\begin {tabular}{cl}
+ A& Workout\\
+ B& Typo Squatting\\
+ C& Candy Packaging\\
+ D& Mirror, Mirror...\\
+ E& Mutexes\\
+ F& Streaming Services\\
+\end {tabular}
