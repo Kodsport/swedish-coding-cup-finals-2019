@@ -121,3 +121,4 @@ tc exact03 gen_exact a=$MAXA m=10000
 tc onebox01 gen_onebox a=$MAXA m=10
 tc onebox02 gen_onebox a=$MAXA m=1000
 tc onebox03 gen_onebox a=$MAXA m=100000
+tc samea01 gen_samea a=$MAXA m=100000 k=1000000000
