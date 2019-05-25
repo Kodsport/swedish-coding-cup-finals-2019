@@ -2,7 +2,7 @@
  A& Workout\\
  B& Typo Squatting\\
  C& Candy Packaging\\
- D& Mirror, Mirror...\\
- E& Mutexes\\
- F& Streaming Services\\
+ D& Streaming Services\\
+ E& Mirror, Mirror...\\
+ F& Mutexes\\
 \end {tabular}
