@@ -9,7 +9,7 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
-const int MAXM = 50'000;
+const int MAXM = 50000;
 typedef bitset<MAXM> B;
 
 vi topo_sort(const vector<vi>& gr) {
