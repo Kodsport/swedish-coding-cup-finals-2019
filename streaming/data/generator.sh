@@ -56,6 +56,10 @@ tc 3-rand4 gen_random 1=60000 2=40000 b=100000 k=199
 tc 3-rand5 gen_random 1=90000 2=100000 b=3000 k=100
 tc 3-rand6 gen_random 1=90000 2=100000 b=3000 k=60
 tc 3-n2 gen_n2 k=100 n=200000 seed=128
+tc 3-mw gen_mw k=200 n=200000
+tc 3-aslowmw-1 gen_random 1=1 2=9900 b=190000 k=200 seed=3
+tc 3-slowmw-2 gen_random 1=60 2=90 b=199850 k=200 seed=6
+tc 3-slowmw-3 gen_random 1=700 2=0 b=199000 k=200 seed=1
 
 group group4 31
 limits n=$N k=$N
@@ -64,5 +68,12 @@ tc 4-rand1 gen_random 1=80000 2=110000 b=5000 k=180000
 tc 4-rand2 gen_random 1=80000 2=110000 b=5000 k=50000
 tc 4-rand3 gen_random 1=80000 2=110000 b=5000 k=10000
 tc 4-rand4 gen_random 1=80000 2=110000 b=5000 k=3000
-tc 4-n2 gen_n2 k=30000 n=200000 seed=128
+tc 4-n2-1 gen_n2 k=30000 n=200000 seed=128
+tc 4-n2-2 gen_n2 k=10000 n=200000
+tc 4-n2-3 gen_n2 k=3000 n=200000
+tc 4-n2-4 gen_n2 k=1000 n=200000
 tc 4-mw gen_mw k=400 n=200000
+tc 4-aslowmw-1 gen_random 1=700 2=0 b=199000 k=1000 seed=1
+tc 4-slowmw-2 gen_random 1=30 2=700 b=199000 k=1000 seed=6
+tc 4-slowmw-3 gen_random 1=2 2=700 b=199000 k=1000 seed=5
+tc 4-slowmw-4 gen_random 1=2 2=9900 b=190000 k=1000 seed=3

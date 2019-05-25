@@ -54,4 +54,5 @@ int main(){
     cin >> N >> K >> s;
     int ans = rec(0, 0, 0);
     cout << ans << endl;
+	_Exit(0);
 }
