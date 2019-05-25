@@ -178,7 +178,7 @@ set<Point> getBadPoints(vector<Point> points) {
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {
-        cerr << "Wrong number of arguments to gen_answer_is_2" << endl;
+        cerr << "Wrong number of arguments to gen_answer_is_barely_3" << endl;
         return 1;
     }
     int N = atoi(argv[1]);
