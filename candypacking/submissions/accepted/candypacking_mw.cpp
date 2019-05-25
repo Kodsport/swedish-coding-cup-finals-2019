@@ -31,8 +31,23 @@ int main(){
         rep(i,0,M) {
             sum += min(K-1, max(1LL, a[i]-1));
         }
-        if (sum < K) {
-            modified = K - sum;
+        vector<ll> costs;
+        rep(i,0,M) {
+            if (a[i] > 1) {
+                if (a[i] > K) {
+                    costs.push_back(1);
+                }
+                else {
+                    costs.push_back(a[i]-1);
+                }
+            }
+        }
+        sort(all(costs));
+        rep(i,0,sz(costs)) {
+            if (sum < K) {
+                modified += costs[i];
+                ++sum;
+            }
         }
     }
     else if (sumA - maxA < boxes) {
