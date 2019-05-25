@@ -21,9 +21,7 @@ int main() {
   sort(all(groups));
 
   ll sum = accumulate(all(groups), 0LL);
-  if (M == 1 && sum > K) {
-    cout << sum / K << " " << sum / K << endl;
-  } else if (sum / K == 1 && N > 1) {
+  if (sum / K == 1 && N > 1) {
     int rem = 0;
     int left = K;
     trav(it, groups) {
