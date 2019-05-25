@@ -23,7 +23,7 @@ int main(){
         cin >> a[i];
     }
     ll maxA = *max_element(all(a));
-    ll sumA = accumulate(all(a), 0L);
+    ll sumA = accumulate(all(a), 0LL);
     ll boxes = sumA/K;
     ll modified = 0;
     if (boxes == 1) {
