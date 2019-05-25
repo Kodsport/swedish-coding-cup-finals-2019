@@ -37,6 +37,7 @@ tc smalla-small04 gen_rand a=2 m=10 k=3
 tc smalla-samea01 gen_samea a=2 m=100000 k=200000
 tc smalla-samea02 gen_samea a=2 m=100000 k=200001
 tc smalla-samea03 gen_samea a=2 m=100000 k=2
+tc smalla-samea04 gen_samea a=2 m=1 k=2
 tc smalla-exact01 gen_exact a=2 m=100000
 tc smalla-exact02 gen_exact a=2 m=100000
 tc smalla-exact03 gen_exact a=2 m=100000
@@ -58,6 +59,9 @@ tc smallm-small01 gen_rand a=$MAXA m=2 k=3
 tc smallm-small02 gen_rand a=$MAXA m=2 k=3
 tc smallm-samea01 gen_samea a=$MAXA m=2 k=100000
 tc smallm-samea02 gen_samea a=$MAXA m=2 k=2
+tc smallm-samea03 gen_samea a=269 m=1 k=269
+tc smallm-samea04 gen_samea a=3 m=1 k=2
+tc smallm-samea05 gen_samea a=$MAXA m=1 k=2
 tc smallm-exact01 gen_exact a=$MAXA m=2
 tc smallm-exact02 gen_exact a=$MAXA m=2
 tc smallm-exact03 gen_exact a=$MAXA m=2
@@ -89,6 +93,9 @@ tc smallsum-exact03 gen_exact a=10000 m=100
 tc smallsum-onebox01 gen_onebox a=10000 m=100
 tc smallsum-onebox02 gen_onebox a=1000 m=1000
 tc smallsum-onebox03 gen_onebox a=100 m=10000
+tc smallsum-samea03 gen_samea a=7 m=1 k=7
+tc smallsum-samea04 gen_samea a=74 m=1 k=73
+tc smallsum-samea05 gen_samea a=752381 m=1 k=2
 
 group group4 14
 limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
