@@ -1,1 +1,1 @@
-# scc-finals-2019
+# swedish-coding-cup-finals-2019
