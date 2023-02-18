@@ -26,6 +26,7 @@ sample 1
 
 group group1 10
 limits nMax=20 xMax=$MAXX
+tc 1
 tc 1-n1 gen_random n=1   maxx=$MAXX
 tc 1-n2 gen_random n=2   maxx=5
 tc 1-n3 gen_random n=3   maxx=10  
@@ -61,6 +62,7 @@ tc 1-n6
 
 group group3 8
 limits nMax=800 xMax=$MAXX
+tc 1
 include_group group2
 include_group group1
 tc 3-mediumn0 gen_random n=800  maxx=$MAXX
@@ -98,6 +100,7 @@ tc 1-n6
 
 group group5 25
 limits nMax=$MAXN xMax=$MAXX
+tc 1
 include_group group4
 include_group group3
 tc 6-bign1 gen_random n=$MAXN  maxx=$MAXX

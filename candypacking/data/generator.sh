@@ -4,7 +4,7 @@ PPATH=$(realpath ..)
 
 . ../../testdata_tools/gen.sh
 
-use_solution candypacking_mw.cpp
+use_solution candypacking_mw.cpp opt
 
 compile gen_rand.py
 compile gen_samea.py
@@ -25,6 +25,7 @@ sample 2
 
 group group1 10
 limits maxA=2 maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
+tc 1
 tc smalla-big01 gen_rand a=1 m=100000 k=100000
 tc smalla-big02 gen_rand a=2 m=100000 k=100000
 tc smalla-mid01 gen_rand a=2 m=100000 k=50000
@@ -47,6 +48,7 @@ tc smalla-onebox03 gen_onebox a=2 m=100000
 
 group group2 14
 limits maxA=$MAXA maxM=2 maxAsum=$MAXASUM maxK=$MAXK
+tc 2
 tc smallm-big01 gen_rand a=$MAXA m=2 k=100000
 tc smallm-big02 gen_rand a=$MAXA m=2 k=100000
 tc smallm-big03 gen_rand a=$MAXA m=2 k=100000
@@ -74,6 +76,8 @@ tc smallm-onebox06 gen_onebox a=10 m=2
 
 group group3 15
 limits maxA=$MAXA maxM=$MAXM maxAsum=1000000 maxK=$MAXK
+tc 1
+tc 2
 include_group group1
 tc smallsum-small01 gen_randomsum suma=1000000 groups=10
 tc smallsum-small02 gen_randomsum suma=1000000 groups=10
@@ -99,6 +103,8 @@ tc smallsum-samea05 gen_samea a=752381 m=1 k=2
 
 group group4 16
 limits maxA=$MAXA maxM=$MAXM maxAsum=$MAXASUM maxK=$MAXK
+tc 1
+tc 2
 include_group group2
 include_group group3
 tc small01 gen_randomsum suma=$MAXA groups=10

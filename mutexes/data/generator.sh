@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 USE_SYMLINKS=1
+REQUIRE_SAMPLE_REUSE=0
 
 ulimit -s unlimited
 

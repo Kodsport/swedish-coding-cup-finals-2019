@@ -19,6 +19,8 @@ sample 2
 
 group group1 10
 limits n=1000 k=10
+tc 1
+tc 2
 for A in {1..5}; do
 	tc 1${A}1-tiny gen_random 1=5 2=5 b=3 k=3
 	tc 1${A}2-tiny gen_random 1=5 2=5 b=7 k=3
@@ -35,6 +37,8 @@ tc 1-2all gen_random 1=0 2=999 b=0 k=10
 
 group group2 6
 limits n=1e5 k=10
+tc 1
+tc 2
 include_group group1
 tc 2-rand1 gen_random 1=115000 2=80000 b=2500 k=10 mult=0.5
 tc 2-rand2 gen_random 1=80000 2=115000 b=1000 k=10 mult=0.5
@@ -48,6 +52,8 @@ tc 2-n2-2 gen_n2 k=10 n=100000 seed=127
 
 group group3 15
 limits n=1e5 k=200
+tc 1
+tc 2
 include_group group2
 tc 3-rand1 gen_random 1=110000 2=80000 b=2500 k=200 mult=0.5
 tc 3-rand2 gen_random 1=80000 2=110000 b=1000 k=200 mult=0.5
@@ -63,6 +69,8 @@ tc 3-slowmw-3 gen_random 1=700 2=0 b=199000 k=200 seed=1 mult=0.5
 
 group group4 34
 limits n=4e5 k=4e5
+tc 1
+tc 2
 include_group group3
 tc 4-rand1 gen_random 1=80000 2=110000 b=5000 k=180000 mult=2
 tc 4-rand2 gen_random 1=80000 2=110000 b=5000 k=50000 mult=2
